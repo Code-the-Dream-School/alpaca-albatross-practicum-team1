@@ -1,15 +1,11 @@
 import "./App.css";
-import Button from "./components/Button";
+import { HomeScreen } from "./home/HomeScreen";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Volunteer App</h1>
-        <Button>Register</Button>
-        <br />
-        <Button>Log in</Button>
-      </header>
+      <h1>Volunteer Web</h1>
+      <HomeScreen />
     </div>
   );
 }

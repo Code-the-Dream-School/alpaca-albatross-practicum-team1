@@ -1,0 +1,13 @@
+.register {
+  width: 157px;
+  height: 50px;
+  background: #000000;
+  border-radius: 35px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+}
