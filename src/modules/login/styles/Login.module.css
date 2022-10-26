@@ -8,7 +8,7 @@
   margin: 8px 0;
   padding-left: 24px;
   background-color: #edf5fa;
-  height: 3em;
+  padding: 1em;
   border: none;
   border-radius: 25px;
   font-size: large;
@@ -21,7 +21,7 @@
 .loginButton {
   margin: 8px 0;
   background-color: #000;
-  height: 2.5em;
+  padding: 0.75em;
   border: none;
   border-radius: 50px;
   font-size: x-large;
@@ -39,7 +39,7 @@
 .registerButton {
   margin-top: 8px;
   background-color: #18a0fb;
-  height: 2.5em;
+  padding: 0.75em;
   border: none;
   border-radius: 50px;
   font-size: large;
