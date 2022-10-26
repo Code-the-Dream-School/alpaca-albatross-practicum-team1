@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Login.module.css";
 
-const Login = () => {
+export const Login = () => {
   return (
     <div className={styles.container}>
       <input
@@ -29,5 +29,3 @@ const Login = () => {
     </div>
   );
 };
-
-export default Login;
