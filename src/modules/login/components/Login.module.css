@@ -1,0 +1,56 @@
+.container {
+  margin: 0 5%;
+}
+
+.login {
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input {
+  background-color: #edf5fa;
+  height: 5em;
+  border: none;
+  border-radius: 25px;
+}
+
+.input::placeholder {
+  padding-left: 2%;
+  font-size: large;
+  color: #404040;
+}
+
+.loginButton {
+  background-color: #000;
+  height: 5em;
+  border: none;
+  border-radius: 50px;
+  font-size: large;
+  color: #fff;
+}
+
+.forgotPasswordButton {
+  background-color: #fff;
+  border: none;
+  font-size: medium;
+  color: #18a0fb;
+}
+
+.register {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.registerButton {
+  margin-top: 5%;
+  background-color: #18a0fb;
+  height: 3em;
+  border: none;
+  border-radius: 50px;
+  font-size: medium;
+  color: #fff;
+}
