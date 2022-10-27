@@ -1,6 +1,8 @@
 import { Login } from "../components/Login";
 
+const loginPath = "/login";
+
 export const loginRoute = {
-	path: "/login",
+	path: loginPath,
 	element: <Login />,
 };

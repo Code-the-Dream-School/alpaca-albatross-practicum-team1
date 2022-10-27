@@ -1,6 +1,8 @@
 import { Home } from "../components/Home";
 
+const homePath = "/";
+
 export const homeRoute = {
-	path: "/",
+	path: homePath,
 	element: <Home />,
 };

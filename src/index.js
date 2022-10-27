@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { homeRoute } from "./modules/home/routes/HomeRoute";
-import { loginRoute } from "./modules/login/Routes/LoginRoute";
+import { loginRoute } from "./modules/login/routes/LoginRoute";
 
 const router = createBrowserRouter([homeRoute, loginRoute]);
 
