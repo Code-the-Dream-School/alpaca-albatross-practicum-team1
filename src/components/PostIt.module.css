@@ -4,7 +4,6 @@
 
 .postArea {
 	display: flex;
-    
 }
 
 .postContainter img {
@@ -12,8 +11,8 @@
 	border-radius: 5px;
 }
 
-.post{
-    background-color: rgb(244, 244, 244);
-    padding: 20px;
-    margin: 10px;
+.post {
+	background-color: rgb(244, 244, 244);
+	padding: 20px;
+	margin: 10px;
 }
