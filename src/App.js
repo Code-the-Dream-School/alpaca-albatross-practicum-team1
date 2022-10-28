@@ -1,13 +1,13 @@
 import './App.css';
-import PostIt from './components/PostIt';
+import { Postings } from './modules/login/components/Postings';
 
 function App() {
 	return (
 		<div className='App'>
 			<header className='App-header'>
 				<h1>Volunteer App</h1>
-				<PostIt />
 			</header>
+			<Postings />
 		</div>
 	);
 }

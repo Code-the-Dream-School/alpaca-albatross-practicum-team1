@@ -1,0 +1,14 @@
+.postContainer {
+	padding: 1em;
+}
+
+.postArea{
+	display: flex;
+}
+
+.post {
+	background-color: yellow;
+	padding: 1em;
+	margin: 1em;
+	max-width: 11.25em;
+}
