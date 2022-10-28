@@ -5,8 +5,7 @@ export const Post = ({ title, description }) => {
 		<div className={styles.postContainer}>
 			<div className={styles.postArea}>
 				<div className={styles.post}>
-					{/* <img src={PostItImg} alt='' /> */}
-					<h2>{title}</h2>
+					<h3>{title}</h3>
 					<p>{description}</p>
 				</div>
 			</div>

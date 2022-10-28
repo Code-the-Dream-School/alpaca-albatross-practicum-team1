@@ -1,5 +1,6 @@
 import React from 'react';
 import { Post } from './Post';
+import styles from '../styles/Post.module.css';
 
 // data will change from api when its ready
 const data = [
@@ -22,7 +23,13 @@ const data = [
 ];
 
 export const Postings = () => {
-	return data.map((data, idx) => {
-		return <Post key={idx} title={data.title} description={data.description} />;
-	});
+	return (
+		<div className={styles.posting}>
+			{data.map((data, index) => {
+				return (
+					<Post key={index} title={data.title} description={data.description} />
+				);
+			})}
+		</div>
+	);
 };
