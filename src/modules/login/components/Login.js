@@ -22,7 +22,6 @@ export const Login = () => {
 
       {/* Insert LoginButton component here */}
       <LoginButton />
-
       {/*Insert ForgotPassword route here*/}
       <button className={styles.forgotPasswordButton}>Forgot password?</button>
 
