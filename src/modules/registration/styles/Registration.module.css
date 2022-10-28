@@ -26,12 +26,16 @@
     border-radius: 3.125em;
     font-size: x-large;
     color: #fff;
+    cursor: pointer;
 }
 
 .returnToLoginButton {
     margin-bottom: 4em;
+    width: fit-content;
+    align-self: center;
     background: none;
     border: none;
     font-size: medium;
     color: #18a0fb;
+    cursor: pointer;
 }
