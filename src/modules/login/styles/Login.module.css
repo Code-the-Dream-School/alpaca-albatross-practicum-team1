@@ -1,47 +1,47 @@
 .container {
-  margin: 0 3em;
-  display: flex;
-  flex-direction: column;
+    margin: 0 3em;
+    display: flex;
+    flex-direction: column;
 }
 
 .input {
-  margin: 0.5em 0;
-  padding-left: 1.5em;
-  background-color: #edf5fa;
-  padding: 1em;
-  border: none;
-  border-radius: 1.5625em;
-  font-size: large;
+    margin: 0.5em 0;
+    padding-left: 1.5em;
+    background-color: #edf5fa;
+    padding: 1em;
+    border: none;
+    border-radius: 1.5625em;
+    font-size: large;
 }
 
 .input::placeholder {
-  color: #404040;
+    color: #404040;
 }
 
 .loginButton {
-  margin: 0.5em 0;
-  background-color: #000;
-  padding: 0.75em;
-  border: none;
-  border-radius: 3.125em;
-  font-size: x-large;
-  color: #fff;
+    margin: 0.5em 0;
+    background-color: #000;
+    padding: 0.75em;
+    border: none;
+    border-radius: 3.125em;
+    font-size: x-large;
+    color: #fff;
 }
 
 .forgotPasswordButton {
-  margin-bottom: 4em;
-  background: none;
-  border: none;
-  font-size: medium;
-  color: #18a0fb;
+    margin-bottom: 4em;
+    background: none;
+    border: none;
+    font-size: medium;
+    color: #18a0fb;
 }
 
 .registerButton {
-  margin-top: 0.5em;
-  background-color: #18a0fb;
-  padding: 0.75em;
-  border: none;
-  border-radius: 3.125em;
-  font-size: large;
-  color: #fff;
+    margin-top: 0.5em;
+    background-color: #18a0fb;
+    padding: 0.75em;
+    border: none;
+    border-radius: 3.125em;
+    font-size: large;
+    color: #fff;
 }
