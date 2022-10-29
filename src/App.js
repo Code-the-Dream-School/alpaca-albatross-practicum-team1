@@ -1,11 +1,11 @@
 import "./App.css";
-import { HomeScreen } from "./home/HomeScreen";
+import { Home } from "./modules/home/components/Home";
 
 function App() {
   return (
     <div className="App">
       <h1>Volunteer Web</h1>
-      <HomeScreen />
+      <Home />
     </div>
   );
 }
