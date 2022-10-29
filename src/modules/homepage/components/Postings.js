@@ -1,8 +1,9 @@
 import React from 'react';
 import { Post } from './Post';
-import styles from '../styles/Post.module.css';
 
-// data will change from api when its ready
+import styles from '../styles/Postings.module.css';
+
+// TODO:  data will change from api when its ready
 const data = [
 	{
 		title: 'Baby Sitter',

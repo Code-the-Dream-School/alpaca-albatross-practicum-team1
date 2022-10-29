@@ -9,9 +9,3 @@
 	margin: 0.5em;
 	max-width: 11em;
 }
-
-.posting {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-}
