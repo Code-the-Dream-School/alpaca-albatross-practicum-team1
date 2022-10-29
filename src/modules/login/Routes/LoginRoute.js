@@ -1,8 +1,8 @@
-import { Login } from "../components/Login";
+import { Login } from '../components/Login'
 
-const loginPath = "/login";
+const loginPath = '/login'
 
 export const loginRoute = {
-	path: loginPath,
-	element: <Login />,
-};
+    path: loginPath,
+    element: <Login />,
+}

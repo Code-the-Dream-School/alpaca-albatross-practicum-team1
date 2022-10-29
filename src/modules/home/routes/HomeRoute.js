@@ -1,8 +1,8 @@
-import { Home } from "../components/Home";
+import { Home } from '../components/Home'
 
-const homePath = "/";
+const homePath = '/'
 
 export const homeRoute = {
-	path: homePath,
-	element: <Home />,
-};
+    path: homePath,
+    element: <Home />,
+}
