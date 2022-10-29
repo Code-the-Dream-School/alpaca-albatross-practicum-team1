@@ -1,5 +1,5 @@
 import './App.css';
-import { Postings } from './modules/homepage/components/Postings';
+import { Postings } from './modules/home/components/Postings';
 
 function App() {
 	return (
