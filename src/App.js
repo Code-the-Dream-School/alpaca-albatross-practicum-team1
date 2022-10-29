@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css'
 import { Postings } from './modules/home/components/Postings'
 
