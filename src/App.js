@@ -1,13 +1,14 @@
-import "./App.css";
-import { Home } from "./modules/home/components/Home";
+import React from 'react'
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Volunteer Web</h1>
-      <Home />
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>Volunteer App</h1>
+            </header>
+        </div>
+    )
 }
 
-export default App;
+export default App

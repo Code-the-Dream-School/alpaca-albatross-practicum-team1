@@ -30,6 +30,9 @@ export const Login = () => {
             <span>Don't have an account?</span>
             {/*Insert Registration route here*/}
             <RegisterButton />
+            <button className={styles.registerButton}>
+                Create new account
+            </button>
         </div>
     )
 }
