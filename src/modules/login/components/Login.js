@@ -1,6 +1,4 @@
 import React from 'react'
-import { LoginButton } from '../../common/components/loginButton/LoginButton'
-import { RegisterButton } from '../../common/components/registerButton/RegisterButton'
 import styles from '../styles/Login.module.css'
 
 export const Login = () => {
