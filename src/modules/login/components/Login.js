@@ -18,7 +18,6 @@ export const Login = () => {
                 required
             />
 
-            {/* Insert LoginButton component here */}
             <button className={styles.loginButton}>Log in</button>
             {/*Insert ForgotPassword route here*/}
             <button className={styles.forgotPasswordButton}>
