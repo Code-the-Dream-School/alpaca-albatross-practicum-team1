@@ -1,7 +1,6 @@
 import React from 'react'
 import { LoginButton } from '../../common/components/loginButton/LoginButton'
 import { RegisterButton } from '../../common/components/registerButton/RegisterButton'
-
 import styles from '../styles/Login.module.css'
 
 export const Login = () => {
@@ -21,7 +20,7 @@ export const Login = () => {
                 required
             />
 
-            <LoginButton />
+            <button className={styles.loginButton}>Log in</button>
             {/*Insert ForgotPassword route here*/}
             <button className={styles.forgotPasswordButton}>
                 Forgot password?
@@ -29,7 +28,6 @@ export const Login = () => {
 
             <span>Don't have an account?</span>
             {/*Insert Registration route here*/}
-            <RegisterButton />
             <button className={styles.registerButton}>
                 Create new account
             </button>

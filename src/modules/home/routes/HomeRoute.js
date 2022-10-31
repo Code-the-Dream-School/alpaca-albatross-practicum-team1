@@ -1,6 +1,6 @@
 import { Home } from '../components/Home'
 
-export const homePath = '/'
+export const homePath = '/home'
 
 export const homeRoute = {
     path: homePath,

@@ -1,0 +1,10 @@
+.homeHeader {
+    display: flex;
+    align-items: center;
+    margin: 0 16em;
+}
+.homeButtons {
+    display: flex;
+    margin-left: auto;
+    gap: 16px;
+}
