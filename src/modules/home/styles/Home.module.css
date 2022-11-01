@@ -1,0 +1,12 @@
+.homeHeader {
+    display: flex;
+    align-items: center;
+    display: 'space-between';
+    justify-content: space-between;
+    flex: 1;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.homeButtons {
+    display: flex;
+}

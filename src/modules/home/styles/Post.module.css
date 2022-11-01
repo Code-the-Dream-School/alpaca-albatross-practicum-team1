@@ -1,0 +1,11 @@
+.postContainer {
+    padding: 0.5em;
+}
+
+.post {
+    background-color: #fffb00;
+    border-radius: 0.8em;
+    padding: 1em;
+    margin: 0.5em;
+    max-width: 11em;
+}
