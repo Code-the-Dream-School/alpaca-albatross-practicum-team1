@@ -5,8 +5,9 @@ import reportWebVitals from './reportWebVitals'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { homeRoute } from './modules/home/routes/HomeRoute'
 import { loginRoute } from './modules/login/routes/LoginRoute'
+import { registrationRoute } from './modules/registration/routes/RegistrationRoute'
 
-const router = createBrowserRouter([homeRoute, loginRoute])
+const router = createBrowserRouter([homeRoute, loginRoute, registrationRoute])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
