@@ -4,16 +4,14 @@ import { useNavigate } from 'react-router-dom'
 import { registrationPath } from '../../registration/routes/RegistrationRoute'
 
 export const RegisterButton = () => {
-    const toRegistration = useNavigate()
+    
+    const navigate = useNavigate()
+
+    const onClick = () => navigate(registrationPath)
 
     return (
         <div>
-            <button
-                className={styles.registerButton}
-                onClick={() => toRegistration(registrationPath)}
-            >
-                Register
-            </button>
+            <button className={styles.registerButton} onClick={onClick}>Register</button>
         </div>
     )
 }

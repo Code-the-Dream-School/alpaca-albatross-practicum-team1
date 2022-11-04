@@ -12,7 +12,7 @@ export const Home = () => {
                 <h1>Volunteer</h1>
                 <div className={styles.homeButtons}>
                     <LoginButton />
-                    <RegisterButton />
+                    <RegisterButton/>
                 </div>
             </div>
             <Postings />
