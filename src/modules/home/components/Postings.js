@@ -1,34 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Post } from './Post'
-
+import axios from 'axios'
 import styles from '../styles/Postings.module.css'
 
-// TODO:  data will change from api when its ready
-const data = [
-    {
-        title: 'Baby Sitter',
-        description: 'HELP NEEDED ASAP!',
-    },
-    {
-        title: 'Actor / Actress',
-        description: 'HELP NEEDED ASAP',
-    },
-    {
-        title: 'Delivery Driver',
-        description: 'HELP NEEDED ASAP',
-    },
-    {
-        title: 'Warehouse Worker',
-        description: 'HELP NEEDED ASAP',
-    },
-]
-
 export const Postings = () => {
+    const [post, setPost] = useState([])
+
+    useEffect(() => {
+        axios
+            .get(
+                'https://dpx3nob3b4anj5ujjhfudnsspu0ubhst.lambda-url.ap-southeast-2.on.aws/'
+            )
+            .then(res => {
+                console.log("Getting from API ENDPOINT", res.data.posts)
+                setPost(res.data.posts)
+            })
+            .catch((err) => console.log(err))
+    }, [])
+
     return (
         <div className={styles.posting}>
-            {data.map((data, index) => {
+            {post.map((data, index) => {
                 return (
-                    <Post
+                    <Post 
                         key={index}
                         title={data.title}
                         description={data.description}
