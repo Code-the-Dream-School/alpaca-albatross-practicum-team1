@@ -1,8 +1,3 @@
-form {
-    display: flex;
-    flex-direction: column;
-}
-
 .loginButton {
     display: flex;
     background: #000000;
@@ -13,20 +8,4 @@ form {
     cursor: pointer;
     font-size: 1em;
     align-items: center;
-}
-.button:disabled {
-    opacity: 0.5;
-}
-
-.spinner {
-    animation: spin infinite 5s linear;
-    color: #ffffff;
-}
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
