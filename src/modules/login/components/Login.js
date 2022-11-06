@@ -1,16 +1,6 @@
 import React, { useState } from 'react'
 import styles from '../styles/Login.module.css'
 
-// const loginSuccess = async () => {
-//     const res = await fetch(
-//         'https://zj7ipg4ixun5mj77y6g6t7qkce0omtjb.lambda-url.ap-southeast-2.on.aws/'
-//     )
-
-//     const data = await res.json()
-//     console.log(data)
-// }
-// loginSuccess()
-
 export const Login = () => {
     const [loginData, SetLoginData] = useState({
         email: '',
