@@ -9,7 +9,7 @@ export const Registration = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [error, setError] = useState(null)
+    const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const [success, setSuccess] = useState(false)
 
@@ -55,7 +55,7 @@ export const Registration = () => {
             )
             setSuccess(true)
         } catch (error) {
-            setError(error)
+            setIsError(true)
         } finally {
             setIsLoading(false)
         }
@@ -126,7 +126,7 @@ export const Registration = () => {
 
                         {isLoading && <LoadingSpinner />}
 
-                        {error && (
+                        {isError && (
                             <p className={styles.error}>
                                 REGISTRATION FAILED. Please try again.
                             </p>
