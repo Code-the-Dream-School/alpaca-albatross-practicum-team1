@@ -53,10 +53,8 @@ export const Registration = () => {
                     mode: 'cors',
                 }
             )
-            console.log(response.data)
             setSuccess(true)
         } catch (error) {
-            console.log('Error:', error)
             setError(error)
         } finally {
             setIsLoading(false)
