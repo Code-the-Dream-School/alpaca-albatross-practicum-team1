@@ -11,8 +11,8 @@ export const Postings = () => {
             .get(
                 'https://dpx3nob3b4anj5ujjhfudnsspu0ubhst.lambda-url.ap-southeast-2.on.aws/'
             )
-            .then(res => {
-                console.log("Getting from API ENDPOINT", res.data.posts)
+            .then((res) => {
+                console.log('Getting from API ENDPOINT', res.data.posts)
                 setPost(res.data.posts)
             })
             .catch((err) => console.log(err))
@@ -22,7 +22,7 @@ export const Postings = () => {
         <div className={styles.posting}>
             {post.map((data, index) => {
                 return (
-                    <Post 
+                    <Post
                         key={index}
                         title={data.title}
                         description={data.description}

@@ -4,7 +4,6 @@ import { LoginButton } from './LoginButton'
 import { RegisterButton } from './RegisterButton'
 import styles from '../styles/Home.module.css'
 
-
 export const Home = () => {
     return (
         <div>
