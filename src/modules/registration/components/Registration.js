@@ -126,7 +126,7 @@ export const Registration = () => {
 
                         {isLoading && <LoadingSpinner />}
 
-                        {error !== null && (
+                        {error && (
                             <p className={styles.error}>
                                 REGISTRATION FAILED. Please try again.
                             </p>
