@@ -6,7 +6,7 @@ import axios from 'axios'
 import { homePath } from '../../home/routes/HomeRoute'
 
 export const Login = () => {
-    const [isPending, setIsPending] = useState(true)
+    const [isPending, setIsPending] = useState(false)
     const [error, setError] = useState(null)
     const navigate = useNavigate()
     const [loginData, SetLoginData] = useState({
