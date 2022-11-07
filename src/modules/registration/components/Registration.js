@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/Registration.module.css'
 import axios from 'axios'
+import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 
 export const Registration = () => {
     const [firstName, setFirstName] = useState('')
@@ -125,7 +126,7 @@ export const Registration = () => {
                             Register
                         </button>
 
-                        {isLoading && <p>Loading... </p>}
+                        {isLoading && <LoadingSpinner />}
 
                         {error !== null && (
                             <p className={styles.error}>
