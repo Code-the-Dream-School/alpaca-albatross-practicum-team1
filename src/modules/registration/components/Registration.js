@@ -9,6 +9,7 @@ export const Registration = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleFirstName = (event) => {
         setFirstName(event.target.value)
@@ -32,6 +33,7 @@ export const Registration = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        setIsLoading(true)
         try {
             const response = await axios.post(
                 'https://cf4lq5bf3denzvriyvqnuxlnxu0gwtgo.lambda-url.ap-southeast-2.on.aws/',
@@ -53,6 +55,8 @@ export const Registration = () => {
         } catch (error) {
             console.log('Error:', error)
             setError(error)
+        } finally {
+            setIsLoading(false)
         }
     }
 
@@ -112,6 +116,8 @@ export const Registration = () => {
                 >
                     Register
                 </button>
+
+                {isLoading && <p>Loading... </p>}
 
                 {error !== null && (
                     <p className={styles.error}>
