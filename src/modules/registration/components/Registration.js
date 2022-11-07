@@ -118,6 +118,7 @@ export const Registration = () => {
                         {/* Insert RegisterButton component here */}
                         <button
                             onClick={handleSubmit}
+                            disabled={isLoading}
                             className={styles.registerButton}
                             type="submit"
                         >
