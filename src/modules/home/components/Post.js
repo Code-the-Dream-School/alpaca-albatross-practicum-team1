@@ -14,6 +14,6 @@ export const Post = ({ title, description }) => {
 }
 
 Post.propTypes = {
-    title: PropTypes.h3.isRequired,
-    description: PropTypes.elementType.p.isRequired
+    title: PropTypes.string,
+    description: PropTypes.string,
 }
