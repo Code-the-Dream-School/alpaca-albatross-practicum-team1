@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/Post.module.css'
+import PropTypes from 'prop-types'
 
 export const Post = ({ title, description }) => {
     return (
@@ -10,4 +11,9 @@ export const Post = ({ title, description }) => {
             </div>
         </div>
     )
+}
+
+Post.propTypes = {
+    title: PropTypes.h3.isRequired,
+    description: PropTypes.elementType.p.isRequired
 }
