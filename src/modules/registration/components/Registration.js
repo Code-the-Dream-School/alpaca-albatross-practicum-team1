@@ -8,6 +8,7 @@ export const Registration = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState(null)
 
     const handleFirstName = (event) => {
         setFirstName(event.target.value)
@@ -51,6 +52,7 @@ export const Registration = () => {
             console.log(response.data)
         } catch (error) {
             console.log('Error:', error)
+            setError(error)
         }
     }
 
@@ -110,6 +112,12 @@ export const Registration = () => {
                 >
                     Register
                 </button>
+
+                {error !== null && (
+                    <p className={styles.error}>
+                        REGISTRATION FAILED. Please try again.
+                    </p>
+                )}
             </form>
 
             {/*Insert Login route here*/}

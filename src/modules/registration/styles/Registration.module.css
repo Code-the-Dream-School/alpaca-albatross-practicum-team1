@@ -44,3 +44,9 @@
     color: #18a0fb;
     cursor: pointer;
 }
+
+.error {
+    text-align: center;
+    color: red;
+    font-size: large;
+}
