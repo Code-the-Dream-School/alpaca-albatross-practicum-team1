@@ -10,6 +10,7 @@ export const Registration = () => {
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     const handleFirstName = (event) => {
         setFirstName(event.target.value)
@@ -52,6 +53,7 @@ export const Registration = () => {
                 }
             )
             console.log(response.data)
+            setSuccess(true)
         } catch (error) {
             console.log('Error:', error)
             setError(error)
@@ -61,75 +63,82 @@ export const Registration = () => {
     }
 
     return (
-        <div className={styles.container}>
-            <form className={styles.form}>
-                <input
-                    value={firstName}
-                    onChange={handleFirstName}
-                    className={styles.input}
-                    type="text"
-                    placeholder="First name"
-                    required
-                />
+        <>
+            {success ? (
+                /* success, need to redirect to a user logged in homepage */
+                <p>Success!</p>
+            ) : (
+                <div className={styles.container}>
+                    <form className={styles.form}>
+                        <input
+                            value={firstName}
+                            onChange={handleFirstName}
+                            className={styles.input}
+                            type="text"
+                            placeholder="First name"
+                            required
+                        />
 
-                <input
-                    value={lastName}
-                    onChange={handleLastName}
-                    className={styles.input}
-                    type="text"
-                    placeholder="Last name"
-                    required
-                />
+                        <input
+                            value={lastName}
+                            onChange={handleLastName}
+                            className={styles.input}
+                            type="text"
+                            placeholder="Last name"
+                            required
+                        />
 
-                <input
-                    value={username}
-                    onChange={handleUsername}
-                    className={styles.input}
-                    type="text"
-                    placeholder="Username"
-                    required
-                />
+                        <input
+                            value={username}
+                            onChange={handleUsername}
+                            className={styles.input}
+                            type="text"
+                            placeholder="Username"
+                            required
+                        />
 
-                <input
-                    value={email}
-                    onChange={handleEmail}
-                    className={styles.input}
-                    type="text"
-                    placeholder="Email"
-                    required
-                />
+                        <input
+                            value={email}
+                            onChange={handleEmail}
+                            className={styles.input}
+                            type="text"
+                            placeholder="Email"
+                            required
+                        />
 
-                <input
-                    value={password}
-                    onChange={handlePassword}
-                    className={styles.input}
-                    type="password"
-                    placeholder="Password"
-                    required
-                />
+                        <input
+                            value={password}
+                            onChange={handlePassword}
+                            className={styles.input}
+                            type="password"
+                            placeholder="Password"
+                            required
+                        />
 
-                {/* Insert RegisterButton component here */}
-                <button
-                    onClick={handleSubmit}
-                    className={styles.registerButton}
-                    type="submit"
-                >
-                    Register
-                </button>
+                        {/* Insert RegisterButton component here */}
+                        <button
+                            onClick={handleSubmit}
+                            className={styles.registerButton}
+                            type="submit"
+                        >
+                            Register
+                        </button>
 
-                {isLoading && <p>Loading... </p>}
+                        {isLoading && <p>Loading... </p>}
 
-                {error !== null && (
-                    <p className={styles.error}>
-                        REGISTRATION FAILED. Please try again.
-                    </p>
-                )}
-            </form>
+                        {error !== null && (
+                            <p className={styles.error}>
+                                REGISTRATION FAILED. Please try again.
+                            </p>
+                        )}
+                    </form>
 
-            {/*Insert Login route here*/}
-            <button className={styles.returnToLoginButton}>
-                Already have an account?
-            </button>
-        </div>
+                    {/*Insert Login route here*/}
+                    <button className={styles.returnToLoginButton}>
+                        Already have an account?
+                    </button>
+                </div>
+            )}
+        </>
     )
 }
