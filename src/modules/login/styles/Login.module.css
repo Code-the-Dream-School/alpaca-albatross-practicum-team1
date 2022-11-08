@@ -40,6 +40,11 @@
     cursor: pointer;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 .registerButton {
     margin-top: 0.5em;
     background-color: #18a0fb;
@@ -49,4 +54,21 @@
     font-size: large;
     color: #fff;
     cursor: pointer;
+}
+
+.button:disabled {
+    opacity: 0.5;
+}
+
+.spinner {
+    animation: spin infinite 5s linear;
+    color: #ffffff;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
