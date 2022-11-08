@@ -5,5 +5,5 @@ export const homePath = '/'
 
 export const homeRoute = {
     path: homePath,
-    element: <Home />,
+    element: <Home />
 }

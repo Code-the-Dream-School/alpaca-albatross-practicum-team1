@@ -15,5 +15,5 @@ export const Post = ({ title, description }) => {
 
 Post.propTypes = {
     title: PropTypes.string,
-    description: PropTypes.string,
+    description: PropTypes.string
 }

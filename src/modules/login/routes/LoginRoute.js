@@ -5,5 +5,5 @@ export const loginPath = '/login'
 
 export const loginRoute = {
     path: loginPath,
-    element: <Login />,
+    element: <Login />
 }
