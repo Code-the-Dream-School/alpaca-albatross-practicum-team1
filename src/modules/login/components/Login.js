@@ -6,35 +6,32 @@ import axios from 'axios'
 import { homePath } from '../../home/routes/HomeRoute'
 
 export const Login = () => {
-    const [isPending, setIsPending] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
     const navigate = useNavigate()
-    const [loginData, SetLoginData] = useState({
-        email: '',
-        password: '',
-    })
 
     const handleChange = (e) => {
-        SetLoginData((prevloginData) => {
-            return {
-                ...prevloginData,
-                [e.target.name]: e.target.value,
-            }
-        })
+        let data
+        const form = document.querySelector('form') // should I use useRef hook?
+        const formData = new FormData(form)
+
+        for (data of formData) {
+            console.log(data[0], data[1]) // I guess we will need to submit this data in function below
+        }
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        setIsLoading(true)
         try {
             const res = await axios.get(
                 'https://zj7ipg4ixun5mj77y6g6t7qkce0omtjb.lambda-url.ap-southeast-2.on.aws/'
             )
-            setIsPending(true)
 
             if (res.data.isLoginSuccess) {
                 navigate(homePath)
-                setIsPending(false)
+                setIsLoading(false)
             }
         } catch (err) {
             if (err.name === 'AxiosError') {
@@ -43,7 +40,6 @@ export const Login = () => {
                 setError('Login unsuccessful')
             }
         }
-        SetLoginData(loginData)
     }
 
     return (
@@ -57,7 +53,6 @@ export const Login = () => {
                     placeholder="Email"
                     required
                 />
-
                 <input
                     className={styles.input}
                     onChange={handleChange}
@@ -66,22 +61,20 @@ export const Login = () => {
                     placeholder="Password"
                     required
                 />
-
                 {error && <span>{error}</span>}
                 <button
                     className={styles.loginButton}
                     onClick={handleSubmit}
-                    disabled={isPending}
+                    disabled={isLoading}
                 >
-                    {isPending && (
+                    {isLoading && (
                         <ClipLoader
                             color={'#ffff'}
                             size={20}
                             aria-label="Loading Spinner"
                         />
                     )}
-                    {isPending && <span>Loading...</span>}
-                    {!isPending && <span>Log in</span>}
+                    <span>{isLoading ? 'Loading...' : 'Log In'}</span>
                 </button>
             </form>
 
