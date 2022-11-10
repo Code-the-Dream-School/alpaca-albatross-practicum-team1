@@ -4,47 +4,22 @@ import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 
 export const Registration = () => {
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [username, setUsername] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
     const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const [success, setSuccess] = useState(false)
 
-    const handleFirstName = (event) => {
-        setFirstName(event.target.value)
-    }
-
-    const handleLastName = (event) => {
-        setLastName(event.target.value)
-    }
-
-    const handleUsername = (event) => {
-        setUsername(event.target.value)
-    }
-
-    const handleEmail = (event) => {
-        setEmail(event.target.value)
-    }
-
-    const handlePassword = (event) => {
-        setPassword(event.target.value)
-    }
-
     const handleSubmit = async (event) => {
         event.preventDefault()
+
+        const formData = new FormData(event.target)
+        const data = Object.fromEntries(formData)
+
         setIsLoading(true)
         try {
             const response = await axios.post(
-                'https://cf4lq5bf3denzvriyvqnuxlnxu0gwtgo.lambda-url.ap-southeast-2.on.aws/',
+                'http://localhost:3000/auth/register',
                 {
-                    firstName,
-                    lastName,
-                    username,
-                    email,
-                    password,
+                    body: data,
                 },
                 {
                     headers: {
@@ -68,10 +43,9 @@ export const Registration = () => {
                 <p>Success!</p>
             ) : (
                 <div className={styles.container}>
-                    <form className={styles.form}>
+                    <form className={styles.form} onSubmit={handleSubmit}>
                         <input
-                            value={firstName}
-                            onChange={handleFirstName}
+                            name="firstName"
                             className={styles.input}
                             type="text"
                             placeholder="First name"
@@ -79,8 +53,7 @@ export const Registration = () => {
                         />
 
                         <input
-                            value={lastName}
-                            onChange={handleLastName}
+                            name="lastName"
                             className={styles.input}
                             type="text"
                             placeholder="Last name"
@@ -88,8 +61,7 @@ export const Registration = () => {
                         />
 
                         <input
-                            value={username}
-                            onChange={handleUsername}
+                            name="username"
                             className={styles.input}
                             type="text"
                             placeholder="Username"
@@ -97,8 +69,7 @@ export const Registration = () => {
                         />
 
                         <input
-                            value={email}
-                            onChange={handleEmail}
+                            name="email"
                             className={styles.input}
                             type="text"
                             placeholder="Email"
@@ -106,8 +77,7 @@ export const Registration = () => {
                         />
 
                         <input
-                            value={password}
-                            onChange={handlePassword}
+                            name="password"
                             className={styles.input}
                             type="password"
                             placeholder="Password"
@@ -116,7 +86,6 @@ export const Registration = () => {
 
                         {/* Insert RegisterButton component here */}
                         <button
-                            onClick={handleSubmit}
                             disabled={isLoading}
                             className={styles.registerButton}
                             type="submit"
