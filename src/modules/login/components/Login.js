@@ -10,28 +10,27 @@ export const Login = () => {
     const [error, setError] = useState(null)
     const navigate = useNavigate()
 
-    const handleChange = (e) => {
-        let data
-        const form = document.querySelector('form') // should I use useRef hook?
-        const formData = new FormData(form)
-
-        for (data of formData) {
-            console.log(data[0], data[1]) // I guess we will need to submit this data in function below
-        }
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault()
-
         setIsLoading(true)
+
+        const data = new FormData(e.currentTarget)
+        console.log('password', data.get('password'))
+        console.log('email', data.get('email'))
+
+        const email = data.get('email')
+        const password = data.get('password')
+
         try {
-            const res = await axios.get(
-                'https://zj7ipg4ixun5mj77y6g6t7qkce0omtjb.lambda-url.ap-southeast-2.on.aws/'
+            const res = await axios.post(
+                //TODO: update url once backend is finished
+                'https://zj7ipg4ixun5mj77y6g6t7qkce0omtjb.lambda-url.ap-southeast-2.on.aws/',
+                { email, password }
             )
 
             if (res.data.isLoginSuccess) {
-                navigate(homePath)
                 setIsLoading(false)
+                navigate(homePath)
             }
         } catch (err) {
             if (err.name === 'AxiosError') {
@@ -47,7 +46,6 @@ export const Login = () => {
             <form onSubmit={handleSubmit}>
                 <input
                     className={styles.input}
-                    onChange={handleChange}
                     type="text"
                     name="email"
                     placeholder="Email"
@@ -55,18 +53,13 @@ export const Login = () => {
                 />
                 <input
                     className={styles.input}
-                    onChange={handleChange}
                     type="password"
                     name="password"
                     placeholder="Password"
                     required
                 />
                 {error && <span>{error}</span>}
-                <button
-                    className={styles.loginButton}
-                    onClick={handleSubmit}
-                    disabled={isLoading}
-                >
+                <button className={styles.loginButton} disabled={isLoading}>
                     {isLoading && (
                         <ClipLoader
                             color={'#ffff'}
@@ -83,7 +76,7 @@ export const Login = () => {
                 Forgot password?
             </button>
 
-            <span>Don't have an account?</span>
+            <span>{`Don't have an account?`}</span>
             {/*Insert Registration route here*/}
             <button className={styles.registerButton}>
                 Create new account
