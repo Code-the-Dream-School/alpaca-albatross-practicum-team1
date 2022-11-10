@@ -7,20 +7,20 @@ import styles from '../styles/Postings.module.css'
 const data = [
     {
         title: 'Baby Sitter',
-        description: 'HELP NEEDED ASAP!',
+        description: 'HELP NEEDED ASAP!'
     },
     {
         title: 'Actor / Actress',
-        description: 'HELP NEEDED ASAP',
+        description: 'HELP NEEDED ASAP'
     },
     {
         title: 'Delivery Driver',
-        description: 'HELP NEEDED ASAP',
+        description: 'HELP NEEDED ASAP'
     },
     {
         title: 'Warehouse Worker',
-        description: 'HELP NEEDED ASAP',
-    },
+        description: 'HELP NEEDED ASAP'
+    }
 ]
 
 export const Postings = () => {

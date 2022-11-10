@@ -24,7 +24,7 @@ export const Login = () => {
                 Forgot password?
             </button>
 
-            <span>Don't have an account?</span>
+            <span>{`Don't have an account?`}</span>
             {/*Insert Registration route here*/}
             <button className={styles.registerButton}>
                 Create new account
