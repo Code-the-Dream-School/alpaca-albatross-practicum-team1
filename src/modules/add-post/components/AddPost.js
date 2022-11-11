@@ -1,26 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
+import axios from 'axios'
 import styles from '../styles/AddPost.module.css'
 
 export const AddPost = () => {
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const [email, setEmail] = useState('')
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        const post = { title, description, email }
 
-        console.log(post)
-        // fetch(
-        //     'https://dpx3nob3b4anj5ujjhfudnsspu0ubhst.lambda-url.ap-southeast-2.on.aws/',
-        //     {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify(post),
-        //     }
-        // ).then(() => {
-        //     console.log('New Post Added')
-        // })
+        const formData = new FormData(e.currentTarget)
+        const data = Object.fromEntries(formData)
+
+        console.log(data)
+
+        useEffect(() => {
+            axios
+                .post(
+                    'https://dpx3nob3b4anj5ujjhfudnsspu0ubhst.lambda-url.ap-southeast-2.on.aws/',
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    }
+                )
+                .then(() => {
+                    console.log('New Post Added')
+                })
+                .catch((err) => console.log(err))
+        }, [])
     }
 
     return (
@@ -28,26 +33,11 @@ export const AddPost = () => {
             <h2>Add a New Post</h2>
             <form onSubmit={handleSubmit}>
                 <label>Post Title:</label>
-                <input
-                    type="text"
-                    required
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-                <label>Post Description:</label>
-                <textarea
-                    type="text"
-                    required
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                />
+                <input type="text" required name="title" />
+                <label>Post Message:</label>
+                <textarea type="text" required name="message" />
                 <label>Email:</label>
-                <input
-                    type="text"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+                <input type="text" required name="email" />
                 <button>ADD POST</button>
             </form>
         </div>

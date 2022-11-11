@@ -1,3 +1,4 @@
+import React from 'react'
 import { AddPost } from '../components/AddPost'
 
 export const addPostPath = '/add-post'
