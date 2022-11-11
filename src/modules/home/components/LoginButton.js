@@ -8,8 +8,10 @@ export const LoginButton = () => {
     const onClick = () => navigate(loginPath)
 
     return (
-        <div onClick={onClick}>
-            <button className={styles.loginButton}>Log in</button>
+        <div>
+            <button className={styles.loginButton} onClick={onClick}>
+                Log in
+            </button>
         </div>
     )
 }

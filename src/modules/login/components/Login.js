@@ -15,9 +15,6 @@ export const Login = () => {
         setIsLoading(true)
 
         const data = new FormData(e.currentTarget)
-        console.log('password', data.get('password'))
-        console.log('email', data.get('email'))
-
         const email = data.get('email')
         const password = data.get('password')
 
@@ -58,7 +55,10 @@ export const Login = () => {
                     placeholder="Password"
                     required
                 />
+
+                {/* TODO: Properly display error message on page  */}
                 {error && <span>{error}</span>}
+
                 <button className={styles.loginButton} disabled={isLoading}>
                     {isLoading && (
                         <ClipLoader
