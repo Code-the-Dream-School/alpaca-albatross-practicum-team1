@@ -23,7 +23,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write ./src",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +55,6 @@
     }
   },
   "lint-staged": {
-    "*.js": ["./node_modules/.bin/eslint - fix", "git add"]
+    "*.js": ["eslint --quiet --cache - fix"]
   }
 }
