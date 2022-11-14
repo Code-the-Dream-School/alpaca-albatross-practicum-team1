@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import styles from '../styles/Registration.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
+import { useNavigate } from 'react-router-dom'
+import { homePath } from '../../home/routes/HomeRoute'
 
 export const Registration = () => {
+    const navigate = useNavigate()
     const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const [success, setSuccess] = useState(false)
@@ -39,8 +42,7 @@ export const Registration = () => {
     return (
         <>
             {success ? (
-                /* success, need to redirect to a user logged in homepage */
-                <p>Success!</p>
+                navigate(homePath)
             ) : (
                 <div className={styles.container}>
                     <form className={styles.form} onSubmit={handleSubmit}>
