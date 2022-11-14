@@ -93,7 +93,7 @@ export const Registration = () => {
                             Register
                         </button>
 
-                        {isLoading && <LoadingSpinner />}
+                        {isLoading && <LoadingSpinner loading={isLoading} />}
 
                         {isError && (
                             <p className={styles.error}>
