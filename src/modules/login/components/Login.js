@@ -30,11 +30,7 @@ export const Login = () => {
                 navigate(homePath)
             }
         } catch (err) {
-            if (err.name === 'AxiosError') {
-                console.log(err.message)
-            } else {
-                setError('Login unsuccessful')
-            }
+            setError('Login unsuccessful')
         }
     }
 
