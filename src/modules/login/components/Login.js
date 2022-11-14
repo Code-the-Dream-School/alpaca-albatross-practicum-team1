@@ -31,6 +31,8 @@ export const Login = () => {
             }
         } catch (err) {
             setError('Login unsuccessful')
+        } finally {
+            setIsLoading(false)
         }
     }
 
