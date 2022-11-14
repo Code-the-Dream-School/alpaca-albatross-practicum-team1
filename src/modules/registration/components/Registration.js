@@ -16,16 +16,16 @@ export const Registration = () => {
 
         setIsLoading(true)
         try {
-            const response = await axios.post(
-                'http://localhost:3000/auth/register',
+            await axios.post(
+                'https://cf4lq5bf3denzvriyvqnuxlnxu0gwtgo.lambda-url.ap-southeast-2.on.aws/',
                 {
-                    body: data,
+                    body: data
                 },
                 {
                     headers: {
-                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Origin': '*'
                     },
-                    mode: 'cors',
+                    mode: 'cors'
                 }
             )
             setSuccess(true)
