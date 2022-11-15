@@ -4,6 +4,11 @@
     flex-direction: column;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
 .input {
     margin: 0.5em 0;
     padding-left: 1.5em;
@@ -38,4 +43,10 @@
     font-size: medium;
     color: #18a0fb;
     cursor: pointer;
+}
+
+.error {
+    text-align: center;
+    color: red;
+    font-size: large;
 }
