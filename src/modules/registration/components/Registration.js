@@ -9,7 +9,6 @@ export const Registration = () => {
     const navigate = useNavigate()
     const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
-    const [success, setSuccess] = useState(false)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -19,19 +18,18 @@ export const Registration = () => {
 
         setIsLoading(true)
         try {
-            await axios.post(
-                'https://cf4lq5bf3denzvriyvqnuxlnxu0gwtgo.lambda-url.ap-southeast-2.on.aws/',
+            const response = await axios.post(
+                'http://localhost:3001/auth/register',
                 {
-                    body: data
+                    ...data
                 },
                 {
-                    headers: {
-                        'Access-Control-Allow-Origin': '*'
-                    },
-                    mode: 'cors'
+                    headers: { 'Content-Type': 'application/json' }
                 }
             )
-            setSuccess(true)
+            if (response.data.token) {
+                navigate(homePath)
+            }
         } catch (error) {
             setIsError(true)
         } finally {
@@ -41,75 +39,71 @@ export const Registration = () => {
 
     return (
         <>
-            {success ? (
-                navigate(homePath)
-            ) : (
-                <div className={styles.container}>
-                    <form className={styles.form} onSubmit={handleSubmit}>
-                        <input
-                            name="firstName"
-                            className={styles.input}
-                            type="text"
-                            placeholder="First name"
-                            required
-                        />
+            <div className={styles.container}>
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    <input
+                        name="firstName"
+                        className={styles.input}
+                        type="text"
+                        placeholder="First name"
+                        required
+                    />
 
-                        <input
-                            name="lastName"
-                            className={styles.input}
-                            type="text"
-                            placeholder="Last name"
-                            required
-                        />
+                    <input
+                        name="lastName"
+                        className={styles.input}
+                        type="text"
+                        placeholder="Last name"
+                        required
+                    />
 
-                        <input
-                            name="username"
-                            className={styles.input}
-                            type="text"
-                            placeholder="Username"
-                            required
-                        />
+                    <input
+                        name="username"
+                        className={styles.input}
+                        type="text"
+                        placeholder="Username"
+                        required
+                    />
 
-                        <input
-                            name="email"
-                            className={styles.input}
-                            type="text"
-                            placeholder="Email"
-                            required
-                        />
+                    <input
+                        name="email"
+                        className={styles.input}
+                        type="text"
+                        placeholder="Email"
+                        required
+                    />
 
-                        <input
-                            name="password"
-                            className={styles.input}
-                            type="password"
-                            placeholder="Password"
-                            required
-                        />
+                    <input
+                        name="password"
+                        className={styles.input}
+                        type="password"
+                        placeholder="Password"
+                        required
+                    />
 
-                        {/* Insert RegisterButton component here */}
-                        <button
-                            disabled={isLoading}
-                            className={styles.registerButton}
-                            type="submit"
-                        >
-                            Register
-                        </button>
-
-                        {isLoading && <LoadingSpinner loading={isLoading} />}
-
-                        {isError && (
-                            <p className={styles.error}>
-                                REGISTRATION FAILED. Please try again.
-                            </p>
-                        )}
-                    </form>
-
-                    {/*Insert Login route here*/}
-                    <button className={styles.returnToLoginButton}>
-                        Already have an account?
+                    {/* Insert RegisterButton component here */}
+                    <button
+                        disabled={isLoading}
+                        className={styles.registerButton}
+                        type="submit"
+                    >
+                        Register
                     </button>
-                </div>
-            )}
+
+                    {isLoading && <LoadingSpinner loading={isLoading} />}
+
+                    {isError && (
+                        <p className={styles.error}>
+                            REGISTRATION FAILED. Please try again.
+                        </p>
+                    )}
+                </form>
+
+                {/*Insert Login route here*/}
+                <button className={styles.returnToLoginButton}>
+                    Already have an account?
+                </button>
+            </div>
         </>
     )
 }
