@@ -16,6 +16,7 @@ export const Registration = () => {
         const formData = new FormData(event.target)
         const data = Object.fromEntries(formData)
 
+        setIsError(false)
         setIsLoading(true)
         try {
             const response = await axios.post(
