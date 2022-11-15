@@ -30,6 +30,7 @@ export const Registration = () => {
             )
             if (response.data.token) {
                 navigate(homePath)
+                /* TODO: add userContext */
             }
         } catch (error) {
             setIsError(true)
