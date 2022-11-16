@@ -59,8 +59,3 @@ form {
 .button:disabled {
     opacity: 0.5;
 }
-
-.spinner {
-    animation: spin infinite 5s linear;
-    color: #ffffff;
-}
