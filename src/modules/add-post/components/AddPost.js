@@ -11,11 +11,11 @@ export const AddPost = () => {
         const requestData = {
             ...data,
             // TODO and username once react useContext implemented
-            username: 'Team1'
+            username: 'testuser1'
         }
 
         axios
-            .post('https://localhost:3001/post/createPost', {
+            .post('http://localhost:3001/post/createPost', {
                 ...requestData
             })
             .then(() => {
