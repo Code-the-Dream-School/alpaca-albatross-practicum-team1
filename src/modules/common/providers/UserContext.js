@@ -4,7 +4,13 @@ import PropTypes from 'prop-types'
 export const UserContext = createContext({})
 
 export const UserProvider = ({ children }) => {
-    const [user, setUser] = useState('New User')
+    const [user, setUser] = useState({
+        firstName: '',
+        lastName: '',
+        username: '',
+        email: '',
+        token: ''
+    })
 
     return (
         <UserContext.Provider value={{ user, setUser }}>

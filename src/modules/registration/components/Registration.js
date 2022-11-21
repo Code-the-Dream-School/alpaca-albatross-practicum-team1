@@ -4,13 +4,13 @@ import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 import { useNavigate } from 'react-router-dom'
 import { homePath } from '../../home/routes/HomeRoute'
-import { UserContext } from '../../common/hooks/UserContext'
+import { UserContext } from '../../common/providers/UserContext'
 
 export const Registration = () => {
     const navigate = useNavigate()
     const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
-    const { user, setUser } = useContext(UserContext)
+    const { setUser } = useContext(UserContext)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -31,7 +31,14 @@ export const Registration = () => {
                 }
             )
             if (response.data.token) {
-                setUser(response.data.firstName)
+                const user = {
+                    firstName: data['firstName'],
+                    lastName: data['lastName'],
+                    username: data['username'],
+                    email: data['email'],
+                    token: response.data.token
+                }
+                setUser(user)
                 navigate(homePath)
             }
         } catch (error) {
@@ -43,7 +50,6 @@ export const Registration = () => {
 
     return (
         <>
-            <h1>{`Hello ${user}!`}</h1>
             <div className={styles.container}>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <input
