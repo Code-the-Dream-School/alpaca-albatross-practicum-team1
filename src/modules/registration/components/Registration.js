@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from '../styles/Registration.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 import { useNavigate } from 'react-router-dom'
 import { homePath } from '../../home/routes/HomeRoute'
+import { UserContext } from '../../common/providers/UserContext'
 
 export const Registration = () => {
     const navigate = useNavigate()
     const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
+    const { setUser } = useContext(UserContext)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -29,8 +31,15 @@ export const Registration = () => {
                 }
             )
             if (response.data.token) {
+                const user = {
+                    firstName: data['firstName'],
+                    lastName: data['lastName'],
+                    username: data['username'],
+                    email: data['email'],
+                    token: response.data.token
+                }
+                setUser(user)
                 navigate(homePath)
-                /* TODO: add userContext */
             }
         } catch (error) {
             setIsError(true)
