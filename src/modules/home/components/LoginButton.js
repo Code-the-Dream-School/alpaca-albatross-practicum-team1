@@ -5,7 +5,6 @@ import { loginPath } from '../../login/routes/LoginRoute'
 
 export const LoginButton = () => {
     const navigate = useNavigate()
-
     const onClick = () => navigate(loginPath)
 
     return (

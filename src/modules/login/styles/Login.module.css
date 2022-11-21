@@ -40,6 +40,11 @@
     cursor: pointer;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 .registerButton {
     margin-top: 0.5em;
     background-color: #18a0fb;
@@ -49,4 +54,8 @@
     font-size: large;
     color: #fff;
     cursor: pointer;
+}
+
+.button:disabled {
+    opacity: 0.5;
 }
