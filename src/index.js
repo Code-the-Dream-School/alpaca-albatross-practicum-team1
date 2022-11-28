@@ -7,13 +7,21 @@ import { homeRoute } from './modules/home/routes/HomeRoute'
 import { loginRoute } from './modules/login/routes/LoginRoute'
 import { registrationRoute } from './modules/registration/routes/RegistrationRoute'
 import { addPostRoute } from './modules/add-post/routes/AddPostRoute'
+import { UserProvider } from './modules/common/providers/UserContext'
 
-const router = createBrowserRouter([homeRoute, loginRoute, registrationRoute, addPostRoute])
+const router = createBrowserRouter([
+    homeRoute,
+    loginRoute,
+    registrationRoute,
+    addPostRoute
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <UserProvider>
+            <RouterProvider router={router} />
+        </UserProvider>
     </React.StrictMode>
 )
 

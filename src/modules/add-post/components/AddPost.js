@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import axios from 'axios'
 import styles from '../styles/AddPost.module.css'
+import { UserContext } from '../../common/providers/UserContext'
 
 export const AddPost = () => {
+    const { user } = useContext(UserContext)
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -11,7 +14,7 @@ export const AddPost = () => {
         const requestData = {
             ...data,
             // TODO and username once react useContext implemented
-            username: 'testuser1'
+            username: user.username
         }
 
         axios
@@ -19,7 +22,7 @@ export const AddPost = () => {
                 ...requestData
             })
             .then(() => {
-                console.log('New Post Added')
+                // TODO: Add Success Message!
             })
             .catch((err) => console.log(err))
     }
