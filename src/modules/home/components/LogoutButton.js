@@ -6,11 +6,18 @@ import { homePath } from '../../home/routes/HomeRoute'
 
 export const LogoutButton = () => {
     const navigate = useNavigate()
-    const { user, setUser } = useContext(UserContext)
+    const { setUser } = useContext(UserContext)
 
     const onClick = () => {
         localStorage.clear()
-        setUser((user.token = ''))
+        const user = {
+            firstName: '',
+            lastName: '',
+            username: '',
+            email: '',
+            token: ''
+        }
+        setUser(user)
         navigate(homePath)
     }
 
