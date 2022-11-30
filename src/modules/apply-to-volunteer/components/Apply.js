@@ -3,20 +3,20 @@ import styles from '../styles/Apply.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 import { UserContext } from '../../common/providers/UserContext'
-import { useNavigate, useParams } from 'react-router-dom'
-import { applySuccessPath } from '../routes/ApplySuccessRoute'
+import { useParams } from 'react-router-dom'
 
 export const Apply = () => {
     const params = useParams()
-    const navigate = useNavigate()
     const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
+    const [isSubmitted, setIsSubmitted] = useState(false)
     const { user } = useContext(UserContext)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         setIsError(false)
         setIsLoading(true)
+        setIsSubmitted(false)
 
         const formData = new FormData(event.target)
         const data = Object.fromEntries(formData)
@@ -40,7 +40,7 @@ export const Apply = () => {
                 }
             )
             if (response.data) {
-                navigate(applySuccessPath)
+                setIsSubmitted(true)
             }
         } catch (error) {
             setIsError(true)
@@ -81,6 +81,15 @@ export const Apply = () => {
                     <p className={styles.error}>
                         APPLICATION NOT SUBMITTED. Please try again.
                     </p>
+                )}
+
+                {isSubmitted && (
+                    <>
+                        <h3>Your application has been submitted.</h3>
+                        <p>
+                            <i>Thank you for applying!</i>
+                        </p>
+                    </>
                 )}
             </form>
         </div>
