@@ -3,11 +3,12 @@ import styles from '../styles/Apply.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 import { UserContext } from '../../common/providers/UserContext'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { applySuccessPath } from '../routes/ApplySuccessRoute'
 
 export const Apply = () => {
     const params = useParams()
-
+    const navigate = useNavigate()
     const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const { user } = useContext(UserContext)
@@ -39,7 +40,7 @@ export const Apply = () => {
                 }
             )
             if (response.data) {
-                console.log(response.data)
+                navigate(applySuccessPath)
             }
         } catch (error) {
             setIsError(true)

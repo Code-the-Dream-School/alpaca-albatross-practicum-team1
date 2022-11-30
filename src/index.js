@@ -9,13 +9,15 @@ import { registrationRoute } from './modules/registration/routes/RegistrationRou
 import { addPostRoute } from './modules/add-post/routes/AddPostRoute'
 import { UserProvider } from './modules/common/providers/UserContext'
 import { applyRoute } from './modules/apply-to-volunteer/routes/ApplyRoute'
+import { applySuccessRoute } from './modules/apply-to-volunteer/routes/ApplySuccessRoute'
 
 const router = createBrowserRouter([
     homeRoute,
     loginRoute,
     registrationRoute,
     addPostRoute,
-    applyRoute
+    applyRoute,
+    applySuccessRoute
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
