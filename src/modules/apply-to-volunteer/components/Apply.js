@@ -3,8 +3,11 @@ import styles from '../styles/Apply.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 import { UserContext } from '../../common/providers/UserContext'
+import { useParams } from 'react-router-dom'
 
 export const Apply = () => {
+    const params = useParams()
+
     const [isError, setIsError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const { user } = useContext(UserContext)
@@ -16,7 +19,8 @@ export const Apply = () => {
         const data = Object.fromEntries(formData)
         const applyData = {
             ...data,
-            username: user.username
+            username: user.username,
+            id: params.id
         }
 
         setIsError(false)
@@ -29,13 +33,13 @@ export const Apply = () => {
                 },
                 {
                     headers: {
-                        Authorization: `Bearer <the token>`,
+                        Authorization: `Bearer ${user.token}`,
                         'Content-Type': 'application/json'
                     }
                 }
             )
-            if (response) {
-                console.log(response)
+            if (response.data) {
+                console.log(response.data)
             }
         } catch (error) {
             setIsError(true)

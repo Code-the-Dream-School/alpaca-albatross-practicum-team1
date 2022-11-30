@@ -29,6 +29,7 @@ export const Postings = () => {
                         key={index}
                         title={data.title}
                         description={data.message}
+                        id={data._id}
                     />
                 )
             })}

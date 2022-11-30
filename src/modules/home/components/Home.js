@@ -5,7 +5,6 @@ import { LoginButton } from './LoginButton'
 import { RegisterButton } from './RegisterButton'
 import styles from '../styles/Home.module.css'
 import { UserContext } from '../../common/providers/UserContext'
-import { VolunteerButton } from './VolunteerButton'
 
 export const Home = () => {
     const { user } = useContext(UserContext)
@@ -26,8 +25,6 @@ export const Home = () => {
                 </div>
             </div>
             <Postings />
-            {/* Note: Volunteer Button will be inside Post component, but there are currently no posts */}
-            <VolunteerButton />
         </div>
     )
 }

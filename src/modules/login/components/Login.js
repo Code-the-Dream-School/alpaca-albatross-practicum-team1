@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from '../styles/Login.module.css'
 import ClipLoader from 'react-spinners/ClipLoader'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { homePath } from '../../home/routes/HomeRoute'
+import { UserContext } from '../../common/providers/UserContext'
 
 export const Login = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
     const navigate = useNavigate()
+    const { setUser } = useContext(UserContext)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -19,14 +21,21 @@ export const Login = () => {
         const password = data.get('password')
 
         try {
-            const res = await axios.post(
+            const response = await axios.post(
                 //TODO: update url once backend is finished
-                'https://zj7ipg4ixun5mj77y6g6t7qkce0omtjb.lambda-url.ap-southeast-2.on.aws/',
+                'http://localhost:3001/auth/login',
                 { email, password }
             )
 
-            if (res.data.isLoginSuccess) {
-                setIsLoading(false)
+            if (response.data.token) {
+                const user = {
+                    firstName: response.data.token.firstName,
+                    lastName: response.data.token.lastName,
+                    username: response.data.token.username,
+                    email: response.data.token.email,
+                    token: response.data.token
+                }
+                setUser(user)
                 navigate(homePath)
             }
         } catch (err) {
