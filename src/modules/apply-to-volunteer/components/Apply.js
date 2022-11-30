@@ -15,6 +15,8 @@ export const Apply = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        setIsError(false)
+        setIsLoading(true)
 
         const formData = new FormData(event.target)
         const data = Object.fromEntries(formData)
@@ -24,8 +26,6 @@ export const Apply = () => {
             id: params.id
         }
 
-        setIsError(false)
-        setIsLoading(true)
         try {
             const response = await axios.post(
                 'http://localhost:3001/post/apply',

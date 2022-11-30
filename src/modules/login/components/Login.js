@@ -28,6 +28,7 @@ export const Login = () => {
             )
 
             if (response.data.token) {
+                //  TODO: backend will change to move user into data object
                 const user = {
                     firstName: response.data.token.firstName,
                     lastName: response.data.token.lastName,
