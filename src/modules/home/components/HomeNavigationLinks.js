@@ -1,7 +1,15 @@
 import React from 'react'
 import styles from '../styles/HomeNavigationLinks.module.css'
+import { useNavigate } from 'react-router-dom'
+import { addPostRoute } from '../../add-post/routes/AddPostRoute'
+// import{ profileRoute} from '../../profile/routes/ProfileRoute'
 
 export const HomeNavigationLinks = () => {
+    const navigate = useNavigate()
+
+    const handleLinkClick = (route) => {
+        navigate(route)
+    }
     return (
         <div className={styles.container}>
             <div>
@@ -9,14 +17,18 @@ export const HomeNavigationLinks = () => {
             </div>
             <div>
                 <nav>
-                    <a href="/profile" target="blank">
+                    {/* TODO: Need to add link to profile */}
+                    <a onClick={() => handleLinkClick()} target="blank">
                         PROFILE
                     </a>
-                    {/* TODO: Need to add link to My Post*/}
-                    <a href="#" target="blank">
+                    {/* TODO: Need to add link to my-post */}
+                    <a onClick={() => handleLinkClick()} target="blank">
                         MY POST
                     </a>
-                    <a href="/add-post" target="blank">
+                    <a
+                        onClick={() => handleLinkClick(addPostRoute)}
+                        target="blank"
+                    >
                         ADD NEW POST
                     </a>
                 </nav>
@@ -24,5 +36,3 @@ export const HomeNavigationLinks = () => {
         </div>
     )
 }
-
-export default HomeNavigationLinks
