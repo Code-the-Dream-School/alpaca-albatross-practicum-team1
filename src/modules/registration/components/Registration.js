@@ -92,7 +92,6 @@ export const Registration = () => {
                         required
                     />
 
-                    {/* Insert RegisterButton component here */}
                     <button
                         disabled={isLoading}
                         className={styles.registerButton}
@@ -110,10 +109,9 @@ export const Registration = () => {
                     )}
                 </form>
 
-                {/*Insert Login route here*/}
-                <button className={styles.returnToLoginButton}>
+                <a href="/login" className={styles.returnToLoginButton}>
                     Already have an account?
-                </button>
+                </a>
             </div>
         </>
     )
