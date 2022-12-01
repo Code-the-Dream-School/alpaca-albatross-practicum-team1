@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { Postings } from './Postings'
 import { LoginButton } from './LoginButton'
 import { RegisterButton } from './RegisterButton'
-import { HomeNavigationLinks } from './HomeNavigationLinks'
 import styles from '../styles/Home.module.css'
 import { UserContext } from '../../common/providers/UserContext'
 
@@ -11,7 +10,6 @@ export const Home = () => {
 
     return (
         <div>
-            <HomeNavigationLinks />
             <div className={styles.homeHeader}>
                 <p>Logo Placeholder</p>
                 <h1>Volunteer</h1>

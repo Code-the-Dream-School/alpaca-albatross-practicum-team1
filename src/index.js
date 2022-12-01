@@ -8,6 +8,7 @@ import { loginRoute } from './modules/login/routes/LoginRoute'
 import { registrationRoute } from './modules/registration/routes/RegistrationRoute'
 import { addPostRoute } from './modules/add-post/routes/AddPostRoute'
 import { UserProvider } from './modules/common/providers/UserContext'
+import { NavigationLinks } from './modules/home/components/NavigationLinks'
 
 const router = createBrowserRouter([
     homeRoute,
@@ -20,6 +21,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
         <UserProvider>
+            <NavigationLinks />
             <RouterProvider router={router} />
         </UserProvider>
     </React.StrictMode>

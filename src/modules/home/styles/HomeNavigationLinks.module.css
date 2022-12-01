@@ -6,13 +6,13 @@
 }
 
 .logo {
-    color: rgb(183, 104, 14);
+    color: rgba(74, 74, 74, 0.703);
 }
 
 a {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    margin: 1em;
+    margin: 0.8em;
     cursor: pointer;
 }
 
@@ -21,16 +21,18 @@ nav {
 }
 
 nav a:hover {
-    color: rgb(183, 104, 14);
+    color: rgba(255, 151, 32, 0.703);
 }
 
 .btn {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(255, 151, 32, 0.703);
+    color: black;
     border-radius: 5em;
-    padding: 1em;
+    padding: 0.7em;
 }
 
-a:hover::before {
+a:hover::before,
+.btn {
     transform: scale(1.1);
     box-shadow: 0 0 15px #ffee10;
     border-radius: 5em;
@@ -49,5 +51,6 @@ a:hover {
 
     a {
         font-size: 0.75em;
+        margin: 0.5em;
     }
 }
