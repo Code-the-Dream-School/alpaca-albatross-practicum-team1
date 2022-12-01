@@ -1,12 +1,11 @@
 import React from 'react'
 import styles from '../styles/HomeNavigationLinks.module.css'
-import PropTypes from 'prop-types'
 
 // import { profileRoute } from './modules/profile/routes/ProfileRoute'
 
 // import { myPostRoute } from './modules/profile/routes/ProfileRoute'
 
-export const NavigationLinks = ({ children }) => {
+export const NavigationLinks = () => {
     return (
         <div className={styles.container}>
             <div>
@@ -23,11 +22,6 @@ export const NavigationLinks = ({ children }) => {
                     </a>
                 </nav>
             </div>
-            {children}
         </div>
     )
-}
-
-NavigationLinks.propTypes = {
-    children: PropTypes.string.isRequired
 }
