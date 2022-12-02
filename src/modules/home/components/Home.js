@@ -11,8 +11,6 @@ export const Home = () => {
     return (
         <div>
             <div className={styles.homeHeader}>
-                <p>Logo Placeholder</p>
-                <h1>Volunteer</h1>
                 <div className={styles.homeButtons}>
                     {/* TODO: Render Logout Button instead of null */}
                     {user.token ? null : (
