@@ -10,3 +10,8 @@
     justify-items: center;
     align-items: center;
 }
+
+.loginButton:hover {
+    background: #ffffff;
+    color: #000000;
+}
