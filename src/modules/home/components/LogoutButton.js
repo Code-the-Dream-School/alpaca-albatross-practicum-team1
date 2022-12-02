@@ -9,7 +9,6 @@ export const LogoutButton = () => {
     const { setUser } = useContext(UserContext)
 
     const onClick = () => {
-        localStorage.clear()
         const user = {
             firstName: '',
             lastName: '',
@@ -19,6 +18,7 @@ export const LogoutButton = () => {
         }
         setUser(user)
         navigate(homePath)
+        localStorage.clear()
     }
 
     return (
