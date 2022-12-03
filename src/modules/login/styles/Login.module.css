@@ -52,6 +52,8 @@ form {
     border: none;
     border-radius: 3.125em;
     font-size: large;
+    text-decoration: none;
+    text-align: center;
     color: #fff;
     cursor: pointer;
 }
