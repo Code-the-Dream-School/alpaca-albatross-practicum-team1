@@ -1,11 +1,14 @@
 .homeHeader {
     display: flex;
     align-items: center;
+    color: #ffffff;
+    margin: 0 auto;
     display: 'space-between';
     justify-content: space-between;
     flex: 1;
-    padding-left: 16em;
-    padding-right: 16em;
+    padding-left: 8em;
+    padding-right: 8em;
+    background: #58249c;
 }
 .homeButtons {
     display: flex;
@@ -14,9 +17,14 @@ video {
     position: fixed;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     z-index: -1;
     filter: opacity(60%);
 }
-.homeContainer {
-    max-width: 100%;
+@media screen and (max-width: 300px) and (max-width: 792px) {
+    .homeHeader {
+        display: inline-block;
+        align-items: center;
+        justify-items: center;
+    }
 }

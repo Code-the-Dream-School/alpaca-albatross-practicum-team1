@@ -6,7 +6,8 @@ import { RegisterButton } from './RegisterButton'
 import styles from '../styles/Home.module.css'
 import { UserContext } from '../../common/providers/UserContext'
 import rotatingEarth from '../../../assets/rotatingEarth.mp4'
-import Footer from './Footer'
+import { Footer } from './Footer'
+import { Searchbar } from './Searchbar'
 
 export const Home = () => {
     const { user } = useContext(UserContext)
@@ -17,6 +18,7 @@ export const Home = () => {
             <div className={styles.homeHeader}>
                 <p>Logo Placeholder</p>
                 <h1>Volunteer</h1>
+                <Searchbar />
                 <div className={styles.homeButtons}>
                     {user.token ? (
                         <LogoutButton />
@@ -28,9 +30,7 @@ export const Home = () => {
                 </div>
             </div>
             <Postings />
-            <>
-                <Footer />
-            </>
+            <Footer />
         </div>
     )
 }
