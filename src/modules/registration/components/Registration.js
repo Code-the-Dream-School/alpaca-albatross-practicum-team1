@@ -39,6 +39,8 @@ export const Registration = () => {
                     token: response.data.token
                 }
                 setUser(user)
+                const userToken = user.token
+                localStorage.setItem('userToken', JSON.stringify(userToken))
                 navigate(homePath)
             }
         } catch (error) {

@@ -8,6 +8,7 @@ import { UserContext } from '../../common/providers/UserContext'
 
 export const Home = () => {
     const { user } = useContext(UserContext)
+    const userTokenFromLocalStorage = localStorage.getItem('userToken')
 
     return (
         <div>
@@ -15,7 +16,7 @@ export const Home = () => {
                 <p>Logo Placeholder</p>
                 <h1>Volunteer</h1>
                 <div className={styles.homeButtons}>
-                    {user.token ? (
+                    {user.token || userTokenFromLocalStorage ? (
                         <LogoutButton />
                     ) : (
                         <>
