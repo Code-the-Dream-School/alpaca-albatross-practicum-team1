@@ -37,8 +37,6 @@ export const Login = () => {
                     token: response.data.token
                 }
                 setUser(user)
-                const userToken = user.token.token
-                localStorage.setItem('userToken', JSON.stringify(userToken))
                 navigate(homePath)
             }
         } catch (err) {

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 export const UserContext = createContext({})
@@ -11,6 +11,9 @@ export const UserProvider = ({ children }) => {
         email: '',
         token: ''
     })
+    useEffect(() => {
+        localStorage.setItem('userToken', JSON.stringify(user.token))
+    }, [])
 
     return (
         <UserContext.Provider value={{ user, setUser }}>
