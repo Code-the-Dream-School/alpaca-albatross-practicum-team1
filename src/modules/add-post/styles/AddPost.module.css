@@ -12,7 +12,7 @@
 
 .container h2 {
     font-size: 1.5em;
-    color: rgb(255, 151, 32);
+    color: rgb(0, 0, 0);
     margin: 4em 0 2em;
 }
 
@@ -28,11 +28,11 @@
 }
 
 .container button {
-    background-color: rgba(255, 151, 32, 0.703);
+    background-color: #18a0fb;
     color: white;
     border: none;
     border-radius: 0.5em;
-    padding: .75em 2em;
+    padding: 0.75em 2em;
     cursor: pointer;
     font-size: 1em;
 }
