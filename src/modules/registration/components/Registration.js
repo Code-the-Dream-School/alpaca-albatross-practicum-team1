@@ -38,6 +38,7 @@ export const Registration = () => {
                     email: data['email'],
                     token: response.data.token
                 }
+                localStorage.setItem('userToken', user.token)
                 setUser(user)
                 navigate(homePath)
             }

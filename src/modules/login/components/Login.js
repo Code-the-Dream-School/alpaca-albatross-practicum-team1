@@ -27,15 +27,15 @@ export const Login = () => {
                 { email, password }
             )
 
-            if (response.data.token) {
-                //  TODO: backend will change to move user into data object
+            if (response.data.user) {
                 const user = {
-                    firstName: response.data.token.firstName,
-                    lastName: response.data.token.lastName,
-                    username: response.data.token.username,
-                    email: response.data.token.email,
-                    token: response.data.token
+                    firstName: response.data.user.firstName,
+                    lastName: response.data.user.lastName,
+                    username: response.data.user.username,
+                    email: response.data.user.email,
+                    token: response.data.user.token
                 }
+                localStorage.setItem('userToken', user.token)
                 setUser(user)
                 navigate(homePath)
             }
