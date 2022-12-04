@@ -30,8 +30,18 @@ export const UserProvider = ({ children }) => {
         validateToken()
     }, [])
 
+    const logout = () => {
+        setUser({
+            firstName: '',
+            lastName: '',
+            username: '',
+            email: '',
+            token: ''
+        })
+    }
+
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={{ user, setUser, logout }}>
             {children}
         </UserContext.Provider>
     )
