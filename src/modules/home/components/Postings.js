@@ -8,9 +8,7 @@ export const Postings = () => {
 
     useEffect(() => {
         axios
-            .get(
-                'https://dpx3nob3b4anj5ujjhfudnsspu0ubhst.lambda-url.ap-southeast-2.on.aws/'
-            )
+            .get('http://localhost:3001/post/getPosts')
             .then((res) => {
                 setPosts(res.data.posts)
             })
@@ -30,7 +28,7 @@ export const Postings = () => {
                     <Post
                         key={index}
                         title={data.title}
-                        description={data.description}
+                        description={data.message}
                     />
                 )
             })}

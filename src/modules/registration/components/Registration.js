@@ -3,8 +3,9 @@ import styles from '../styles/Registration.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 import { useNavigate } from 'react-router-dom'
-import { homePath } from '../../home/routes/HomeRoute'
+// import { homePath } from '../../home/routes/HomeRoute'
 import { UserContext } from '../../common/providers/UserContext'
+import { myPostsPath } from '../../myposts/routes/MypostsRoute'
 
 export const Registration = () => {
     const navigate = useNavigate()
@@ -39,7 +40,7 @@ export const Registration = () => {
                     token: response.data.token
                 }
                 setUser(user)
-                navigate(homePath)
+                navigate(myPostsPath)
             }
         } catch (error) {
             setIsError(true)

@@ -1,0 +1,15 @@
+.postContainer {
+  padding: 0.5em;
+}
+
+.post {
+  background-color: #00aaff;
+  border-radius: 0.8em;
+  padding: 1em;
+  margin: 0.5em;
+  max-width: 11em;
+}
+
+.editText {
+  text-decoration: underline;
+}

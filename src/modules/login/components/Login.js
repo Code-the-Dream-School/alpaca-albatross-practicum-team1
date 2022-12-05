@@ -3,7 +3,8 @@ import styles from '../styles/Login.module.css'
 import ClipLoader from 'react-spinners/ClipLoader'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { homePath } from '../../home/routes/HomeRoute'
+// import { homePath } from '../../home/ro      utes/HomeRoute'
+import { myPostsPath } from '../../myposts/routes/MypostsRoute'
 
 export const Login = () => {
     const [isLoading, setIsLoading] = useState(false)
@@ -21,13 +22,13 @@ export const Login = () => {
         try {
             const res = await axios.post(
                 //TODO: update url once backend is finished
-                'https://zj7ipg4ixun5mj77y6g6t7qkce0omtjb.lambda-url.ap-southeast-2.on.aws/',
+                'https://localhost:3001/auth/login',
                 { email, password }
             )
 
             if (res.data.isLoginSuccess) {
                 setIsLoading(false)
-                navigate(homePath)
+                navigate(myPostsPath)
             }
         } catch (err) {
             setError('Login unsuccessful')
