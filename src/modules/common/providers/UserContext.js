@@ -12,20 +12,32 @@ export const UserProvider = ({ children }) => {
         email: '',
         token: ''
     })
+
     useEffect(() => {
         async function validateToken() {
-            const token = localStorage.getItem('userToken')
-            const response = await axios.get(
-                'http://localhost:3001/auth/validateToken',
+            if (user.token) {
+                try {
+                    const token = localStorage.getItem('userToken')
+                    const response = await axios.get(
+                        'http://localhost:3001/auth/validateToken',
 
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        'Content-Type': 'application/json'
+                        {
+                            headers: {
+                                Authorization: `Bearer ${token}`,
+                                'Content-Type': 'application/json'
+                            }
+                        }
+                    )
+
+                    if (response.data.user && setUser(response.data.user)) {
+                        setUser(response.data.user)
+                    }
+                } catch (error) {
+                    if (error.response.status === 401) {
+                        logout()
                     }
                 }
-            )
-            setUser(response.data.user)
+            }
         }
         validateToken()
     }, [])
@@ -38,6 +50,7 @@ export const UserProvider = ({ children }) => {
             email: '',
             token: ''
         })
+        localStorage.clear()
     }
 
     return (

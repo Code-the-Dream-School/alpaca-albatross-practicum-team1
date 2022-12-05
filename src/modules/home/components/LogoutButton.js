@@ -11,7 +11,6 @@ export const LogoutButton = () => {
     const onClick = () => {
         logout()
         navigate(homePath)
-        localStorage.clear()
     }
 
     return (
