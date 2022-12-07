@@ -5,13 +5,18 @@ import axios from 'axios'
 export const UserContext = createContext({})
 
 export const UserProvider = ({ children }) => {
-    const [user, setUser] = useState({
+    const [user, setUserState] = useState({
         firstName: '',
         lastName: '',
         username: '',
         email: '',
         token: ''
     })
+
+    const setUser = ({ firstName, lastName, username, email, token }) => {
+        localStorage.setItem('userToken', token)
+        setUserState({ firstName, lastName, username, email, token })
+    }
 
     useEffect(() => {
         async function validateToken() {

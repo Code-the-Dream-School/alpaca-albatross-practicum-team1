@@ -35,7 +35,6 @@ export const Login = () => {
                     email: response.data.user.email,
                     token: response.data.user.token
                 }
-                localStorage.setItem('userToken', user.token)
                 setUser(user)
                 navigate(homePath)
             }
