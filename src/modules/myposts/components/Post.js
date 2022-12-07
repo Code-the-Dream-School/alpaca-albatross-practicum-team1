@@ -2,40 +2,66 @@ import React, { useState } from 'react'
 import { Edit } from './Edit'
 import { View } from './View'
 import PropTypes from 'prop-types'
+import axios from 'axios'
 
-export const Post = (data) => {
+export const Post = ({ id, title, message }) => {
     const [isInEditMode, setInEditMode] = useState(false)
-
-    console.log(isInEditMode, setInEditMode)
+    const [post, setPost] = useState({ title, message })
 
     const toggleEditMode = () => {
         setInEditMode(true)
     }
 
-    const updatePost = () => {
-        // Update Post with user edits
-    }
+    const handleSubmit = async (event) => {
+        event.preventDefault()
 
+        const formData = new FormData(event.currentTarget)
+        const data = Object.fromEntries(formData)
+        const requestData = {
+            ...data,
+            id,
+            // TODO and username once react useContext implemented
+            username: 'Owl'
+        }
+
+        try {
+            const response = await axios.post(
+                'http://localhost:3001/post/updatePost',
+                {
+                    ...requestData
+                }
+            )
+            setPost({
+                title: response.data.post.title,
+                message: response.data.post.message
+            })
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
+
+        setInEditMode(false)
+    }
     if (isInEditMode) {
         return (
             <Edit
-                title={data.title}
-                description={data.message}
-                handleSubmit={updatePost}
+                title={post.title}
+                description={post.message}
+                handleSubmit={handleSubmit}
             />
         )
     } else {
         return (
             <View
-                title={data.title}
-                description={data.message}
+                title={post.title}
+                description={post.message}
                 handleClick={toggleEditMode}
             />
         )
     }
 }
 Post.propTypes = {
-    data: PropTypes.object,
+    id: PropTypes.string,
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
+    message: PropTypes.string.isRequired
 }

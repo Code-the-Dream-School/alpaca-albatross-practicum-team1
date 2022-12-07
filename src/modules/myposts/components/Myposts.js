@@ -7,7 +7,7 @@ import { Post } from './Post'
 
 export const Myposts = () => {
     const [posts, setPosts] = useState([])
-    
+
     useEffect(() => {
         axios
             .get('http://localhost:3001/post/getPost', { username: 'Owl' })
@@ -24,12 +24,13 @@ export const Myposts = () => {
     return (
         <>
             <h1>My Posts</h1>
-            {posts.map((data, index) => {
+            {posts.map((post, index) => {
                 return (
                     <Post
+                        id={post._id}
                         key={index}
-                        title={data.title}
-                        message={data.message}
+                        title={post.title}
+                        message={post.message}
                     />
                 )
             })}

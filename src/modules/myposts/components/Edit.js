@@ -19,7 +19,7 @@ export const Edit = ({ title, description, handleSubmit }) => {
                         name="message"
                         placeholder={description}
                     ></textarea>
-                    <button>Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>
