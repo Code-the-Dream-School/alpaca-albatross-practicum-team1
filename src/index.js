@@ -11,14 +11,10 @@ import { addPostRoute } from './modules/add-post/routes/AddPostRoute'
 import { UserProvider } from './modules/common/providers/UserContext'
 
 const router = createBrowserRouter([
-    
     homeRoute,
-   
     loginRoute,
-   
     registrationRoute,
-    myPostsRoute
-,
+    myPostsRoute,
     addPostRoute
 ])
 
