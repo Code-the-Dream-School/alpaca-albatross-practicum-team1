@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react'
 import axios from 'axios'
 import styles from '../styles/AddPost.module.css'
@@ -15,7 +14,7 @@ export const AddPost = () => {
         const requestData = {
             ...data,
             // TODO and username once react useContext implemented
-            username:'Owl'
+            username: user.username
         }
 
         axios

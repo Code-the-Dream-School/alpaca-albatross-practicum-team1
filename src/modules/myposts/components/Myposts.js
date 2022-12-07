@@ -5,12 +5,15 @@ import { useEffect } from 'react'
 import { UserContext } from '../../common/providers/UserContext'
 import { Post } from './Post'
 
-export const Myposts = () => {
+export const MyPosts = () => {
     const [posts, setPosts] = useState([])
+    const { user } = useContext(UserContext)
 
     useEffect(() => {
         axios
-            .get('http://localhost:3001/post/getPost', { username: 'Owl' })
+            .get('http://localhost:3001/post/getPost', {
+                username: user.username
+            })
             .then((res) => {
                 setPosts(res.data.post)
                 console.log(res)
@@ -18,7 +21,6 @@ export const Myposts = () => {
             .catch((err) => console.log(err))
     }, [])
 
-    const { user } = useContext(UserContext)
     console.log(user)
 
     return (

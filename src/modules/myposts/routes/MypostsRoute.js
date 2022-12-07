@@ -1,9 +1,9 @@
 import React from 'react'
-import { Myposts } from '../components/Myposts'
+import { MyPosts } from '../components/MyPosts'
 
 export const myPostsPath = '/myposts'
 
 export const myPostsRoute = {
     path: myPostsPath,
-    element: <Myposts />
+    element: <MyPosts />
 }

@@ -2,10 +2,9 @@ import React, { useContext, useState } from 'react'
 import styles from '../styles/Registration.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
-import { useNavigate } from 'react-router-dom'
-// import { homePath } from '../../home/routes/HomeRoute'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../../common/providers/UserContext'
-import { myPostsPath } from '../../myposts/routes/MypostsRoute'
+import { homePath } from '../../home/routes/HomeRoute'
 
 export const Registration = () => {
     const navigate = useNavigate()
@@ -40,7 +39,7 @@ export const Registration = () => {
                     token: response.data.token
                 }
                 setUser(user)
-                navigate(myPostsPath)
+                navigate(homePath)
             }
         } catch (error) {
             setIsError(true)
@@ -93,7 +92,6 @@ export const Registration = () => {
                         required
                     />
 
-                    {/* Insert RegisterButton component here */}
                     <button
                         disabled={isLoading}
                         className={styles.registerButton}
@@ -111,10 +109,9 @@ export const Registration = () => {
                     )}
                 </form>
 
-                {/*Insert Login route here*/}
-                <button className={styles.returnToLoginButton}>
+                <Link to="/login" className={styles.returnToLoginButton}>
                     Already have an account?
-                </button>
+                </Link>
             </div>
         </>
     )
