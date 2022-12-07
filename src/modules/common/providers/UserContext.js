@@ -34,7 +34,7 @@ export const UserProvider = ({ children }) => {
                         }
                     )
 
-                    if (response.data.user && setUser(response.data.user)) {
+                    if (response.data.user) {
                         setUser(response.data.user)
                     }
                 } catch (error) {
