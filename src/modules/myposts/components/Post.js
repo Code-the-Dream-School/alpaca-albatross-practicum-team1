@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Edit } from './Edit'
 import { View } from './View'
 import PropTypes from 'prop-types'
 import axios from 'axios'
+import { UserContext } from '../../common/providers/UserContext'
 
 export const Post = ({ id, title, message }) => {
     const [isInEditMode, setInEditMode] = useState(false)
     const [post, setPost] = useState({ title, message })
-
+    const { user } = useContext(UserContext)
     const toggleEditMode = () => {
         setInEditMode(true)
     }
@@ -19,16 +20,21 @@ export const Post = ({ id, title, message }) => {
         const data = Object.fromEntries(formData)
         const requestData = {
             ...data,
-            id,
+            username: user.username,
+            id
             // TODO and username once react useContext implemented
-            username: 'Owl'
         }
-
         try {
             const response = await axios.post(
                 'http://localhost:3001/post/updatePost',
                 {
                     ...requestData
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${user.token}`,
+                        'Content-Type': 'application/json'
+                    }
                 }
             )
             setPost({

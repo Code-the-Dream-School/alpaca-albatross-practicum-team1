@@ -11,17 +11,23 @@ export const MyPosts = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3001/post/getPost', {
-                username: user.username
-            })
+            .get(
+                'http://localhost:3001/post/getPost',
+                {
+                    username: user.username
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${user.token}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
             .then((res) => {
                 setPosts(res.data.post)
-                console.log(res)
             })
             .catch((err) => console.log(err))
     }, [])
-
-    console.log(user)
 
     return (
         <>
