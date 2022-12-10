@@ -8,7 +8,7 @@ export const Postings = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3001/post/getPosts')
+            .get('https://volunteerboard.onrender.com/post/getPosts')
             .then((res) => {
                 setPosts(res.data.posts)
             })
@@ -20,7 +20,7 @@ export const Postings = () => {
             <div className={styles.posting}>No posts yet, check back later</div>
         )
     }
-
+    console.log(posts)
     return (
         <div className={styles.posting}>
             {posts.map((data, index) => {

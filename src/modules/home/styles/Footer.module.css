@@ -13,3 +13,12 @@
     color: white;
     margin-top: auto;
 }
+
+@media only screen and (max-width: 900px) {
+    .footer {
+        text-align: center;
+        width: 100vw;
+        margin-top: auto;
+        position: fixed;
+    }
+}

@@ -5,12 +5,10 @@ import { VolunteerButton } from './VolunteerButton'
 
 export const Post = ({ title, description, id }) => {
     return (
-        <div className={styles.postContainer}>
-            <div className={styles.post}>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <VolunteerButton id={id} />
-            </div>
+        <div className={styles.post}>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <VolunteerButton id={id} />
         </div>
     )
 }

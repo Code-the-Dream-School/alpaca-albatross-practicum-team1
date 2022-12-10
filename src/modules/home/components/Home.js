@@ -15,9 +15,14 @@ export const Home = () => {
     return (
         <div className={styles.homeContainer}>
             <video src={rotatingEarth} loop muted autoPlay />
+
             <div className={styles.homeHeader}>
-                <p>Logo Placeholder</p>
-                <h1>Volunteer</h1>
+                <h1 className={styles.header}>Volunteer</h1>
+                <div className={styles.hamburger}>
+                    <div className={styles.line}></div>
+                    <div className={styles.line}></div>
+                    <div className={styles.line}></div>
+                </div>
                 <Searchbar />
                 <div className={styles.homeButtons}>
                     {user.token ? (
