@@ -14,13 +14,13 @@ export const UserProvider = ({ children }) => {
     })
 
     const setUser = ({ firstName, lastName, username, email, token }) => {
-        localStorage.setItem('userToken', token)
+        token && localStorage.setItem('userToken', token)
         setUserState({ firstName, lastName, username, email, token })
     }
 
     useEffect(() => {
         async function validateToken() {
-            if (user.token) {
+            if (localStorage.getItem('userToken')) {
                 try {
                     const token = localStorage.getItem('userToken')
                     const response = await axios.get(
@@ -35,7 +35,11 @@ export const UserProvider = ({ children }) => {
                     )
 
                     if (response.data.user) {
-                        setUser(response.data.user)
+                        const user = {
+                            ...response.data.user,
+                            token
+                        }
+                        setUser(user)
                     }
                 } catch (error) {
                     if (error.response.status === 401) {

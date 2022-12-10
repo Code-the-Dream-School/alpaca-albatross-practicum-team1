@@ -10,24 +10,25 @@ export const MyPosts = () => {
     const { user } = useContext(UserContext)
 
     useEffect(() => {
-        axios
-            .get(
-                'http://localhost:3001/post/getPost',
-                {
-                    username: user.username
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${user.token}`,
-                        'Content-Type': 'application/json'
+        const getData = async () => {
+            try {
+                const res = await axios.get(
+                    'http://localhost:3001/post/getPost',
+                    {
+                        headers: {
+                            Authorization: `Bearer ${user.token}`,
+                            'Content-Type': 'application/json'
+                        }
                     }
-                }
-            )
-            .then((res) => {
+                )
                 setPosts(res.data.post)
-            })
-            .catch((err) => console.log(err))
-    }, [])
+                console.log('log resp', res)
+            } catch (error) {
+                console.log('error', error)
+            }
+        }
+        !!user.token && getData()
+    }, [user.token])
 
     return (
         <>
