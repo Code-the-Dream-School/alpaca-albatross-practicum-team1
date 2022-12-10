@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import styles from '../styles/Registration.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { homePath } from '../../home/routes/HomeRoute'
 import { UserContext } from '../../common/providers/UserContext'
 
@@ -109,9 +109,9 @@ export const Registration = () => {
                     )}
                 </form>
 
-                <a href="/login" className={styles.returnToLoginButton}>
+                <Link to="/login" className={styles.returnToLoginButton}>
                     Already have an account?
-                </a>
+                </Link>
             </div>
         </>
     )

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import styles from '../styles/Login.module.css'
 import ClipLoader from 'react-spinners/ClipLoader'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { homePath } from '../../home/routes/HomeRoute'
 import { UserContext } from '../../common/providers/UserContext'
@@ -27,14 +27,13 @@ export const Login = () => {
                 { email, password }
             )
 
-            if (response.data.token) {
-                //  TODO: backend will change to move user into data object
+            if (response.data.user) {
                 const user = {
-                    firstName: response.data.token.firstName,
-                    lastName: response.data.token.lastName,
-                    username: response.data.token.username,
-                    email: response.data.token.email,
-                    token: response.data.token
+                    firstName: response.data.user.firstName,
+                    lastName: response.data.user.lastName,
+                    username: response.data.user.username,
+                    email: response.data.user.email,
+                    token: response.data.user.token
                 }
                 setUser(user)
                 navigate(homePath)
@@ -85,10 +84,9 @@ export const Login = () => {
             </button>
 
             <span>{`Don't have an account?`}</span>
-            {/*Insert Registration route here*/}
-            <button className={styles.registerButton}>
+            <Link to="/registration" className={styles.registerButton}>
                 Create new account
-            </button>
+            </Link>
         </div>
     )
 }
