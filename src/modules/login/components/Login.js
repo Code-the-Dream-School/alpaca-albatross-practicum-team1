@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from '../styles/Login.module.css'
 import ClipLoader from 'react-spinners/ClipLoader'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { homePath } from '../../home/routes/HomeRoute'
+import { UserContext } from '../../common/providers/UserContext'
 
 export const Login = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
     const navigate = useNavigate()
+    const { setUser } = useContext(UserContext)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -19,14 +21,21 @@ export const Login = () => {
         const password = data.get('password')
 
         try {
-            const res = await axios.post(
+            const response = await axios.post(
                 //TODO: update url once backend is finished
-                'https://zj7ipg4ixun5mj77y6g6t7qkce0omtjb.lambda-url.ap-southeast-2.on.aws/',
+                'http://localhost:3001/auth/login',
                 { email, password }
             )
 
-            if (res.data.isLoginSuccess) {
-                setIsLoading(false)
+            if (response.data.user) {
+                const user = {
+                    firstName: response.data.user.firstName,
+                    lastName: response.data.user.lastName,
+                    username: response.data.user.username,
+                    email: response.data.user.email,
+                    token: response.data.user.token
+                }
+                setUser(user)
                 navigate(homePath)
             }
         } catch (err) {
@@ -75,10 +84,9 @@ export const Login = () => {
             </button>
 
             <span>{`Don't have an account?`}</span>
-            {/*Insert Registration route here*/}
-            <button className={styles.registerButton}>
+            <Link to="/registration" className={styles.registerButton}>
                 Create new account
-            </button>
+            </Link>
         </div>
     )
 }
