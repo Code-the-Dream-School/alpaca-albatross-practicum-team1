@@ -1,18 +1,18 @@
 .container {
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(179, 0, 219);
     display: flex;
     justify-content: space-between;
     padding: 0.2em;
 }
 
 .logo {
-    color: #18a0fb;
+    color: #ffffff;
     padding: 0 1em;
 }
 
 a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin: 0.8em;
     cursor: pointer;
     font-size: 1.2em;
@@ -23,7 +23,7 @@ nav {
 }
 
 nav a:hover {
-    color: #18a0fb;
+    color: #000000;
 }
 
 @media only screen and (max-width: 767px) {

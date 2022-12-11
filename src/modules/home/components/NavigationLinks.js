@@ -1,12 +1,13 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../../common/providers/UserContext'
+import React from 'react'
+// import { UserContext } from '../../common/providers/UserContext'
 import styles from '../styles/HomeNavigationLinks.module.css'
 import { registrationPath } from '../../registration/routes/RegistrationRoute'
 import { loginPath } from '../../login/routes/LoginRoute'
+import { addPostPath } from '../../add-post/routes/AddPostRoute'
+import { Link } from 'react-router-dom'
 
 export const NavigationLinks = () => {
-    const { user } = useContext(UserContext)
-
+    // const { user } = useContext(UserContext)
     return (
         <div className={styles.container}>
             <div>
@@ -14,17 +15,13 @@ export const NavigationLinks = () => {
             </div>
             <div>
                 <nav>
-                    <a href="/">Home</a>
-                    <a href="/profile">Profile</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/profile">Profile</Link>
                     {/* TODO: Need to add link to My Post*/}
-                    <a href="#">My Post</a>
-                    <a href="/add-post">Add Post</a>
-                    {user.token ? null : (
-                        <>
-                            <a href={loginPath}>Login</a>
-                            <a href={registrationPath}>Register</a>{' '}
-                        </>
-                    )}
+                    <Link to="#">My Post</Link>
+                    <Link to={addPostPath}>Add Post</Link>
+                    <Link to={loginPath}>Login</Link>
+                    <Link to={registrationPath}>Register</Link>
                 </nav>
             </div>
         </div>
