@@ -28,7 +28,8 @@ export const Apply = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:3001/post/apply',
+                // eslint-disable-next-line no-undef
+                `${process.env.REACT_APP_SERVICE_ENDPOINT}/post/apply`,
                 {
                     ...applyData
                 },
