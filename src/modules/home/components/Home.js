@@ -17,11 +17,6 @@ export const Home = () => {
 
             <div className={styles.homeHeader}>
                 <h1 className={styles.header}>Volunteer</h1>
-                <div className={styles.hamburger}>
-                    <div className={styles.line}></div>
-                    <div className={styles.line}></div>
-                    <div className={styles.line}></div>
-                </div>
                 <div className={styles.homeButtons}>
                     {user.token ? (
                         <LogoutButton />
