@@ -1,37 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Post } from './Post'
-
+import axios from 'axios'
 import styles from '../styles/Postings.module.css'
 
-// TODO:  data will change from api when its ready
-const data = [
-    {
-        title: 'Baby Sitter',
-        description: 'HELP NEEDED ASAP!',
-    },
-    {
-        title: 'Actor / Actress',
-        description: 'HELP NEEDED ASAP',
-    },
-    {
-        title: 'Delivery Driver',
-        description: 'HELP NEEDED ASAP',
-    },
-    {
-        title: 'Warehouse Worker',
-        description: 'HELP NEEDED ASAP',
-    },
-]
-
 export const Postings = () => {
+    const [posts, setPosts] = useState([])
+
+    useEffect(() => {
+        axios
+            // eslint-disable-next-line no-undef
+            .get(`${process.env.REACT_APP_SERVICE_ENDPOINT}/post/getPosts`)
+            .then((res) => {
+                setPosts(res.data.posts)
+            })
+            .catch((err) => console.log(err))
+    }, [])
+
+    if (!posts || !posts.length) {
+        return (
+            <div className={styles.posting}>No posts yet, check back later</div>
+        )
+    }
+
     return (
         <div className={styles.posting}>
-            {data.map((data, index) => {
+            {posts.map((data, index) => {
                 return (
                     <Post
                         key={index}
                         title={data.title}
-                        description={data.description}
+                        description={data.message}
+                        id={data._id}
                     />
                 )
             })}

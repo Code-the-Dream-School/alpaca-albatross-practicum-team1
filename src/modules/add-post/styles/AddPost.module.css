@@ -1,0 +1,38 @@
+.container {
+    max-width: 35em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container label {
+    text-align: left;
+    display: block;
+    font-size: 1em;
+}
+
+.container h2 {
+    font-size: 1.5em;
+    color: rgb(255, 151, 32);
+    margin: 4em 0 2em;
+}
+
+.container input,
+.container textarea {
+    width: 100%;
+    padding: 1em 2em;
+    margin: 1.2em 0;
+    border: 0.1em solid black;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    display: block;
+}
+
+.container button {
+    background-color: rgba(255, 151, 32, 0.703);
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+    padding: .75em 2em;
+    cursor: pointer;
+    font-size: 1em;
+}
