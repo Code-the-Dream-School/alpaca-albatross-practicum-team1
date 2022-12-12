@@ -1,7 +1,8 @@
 .loginButton {
     display: flex;
-    background: #000000;
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
+    font-weight: bold;
     padding: 0.75em 1.75em;
     border-radius: 1.25em;
     margin-right: 1em;
@@ -9,4 +10,8 @@
     font-size: 1em;
     justify-items: center;
     align-items: center;
+}
+
+.loginButton:hover {
+    background: #dbd7d7;
 }

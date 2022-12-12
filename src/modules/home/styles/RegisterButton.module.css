@@ -6,3 +6,8 @@
     cursor: pointer;
     font-size: 1em;
 }
+
+.registerButton:hover {
+    background: #ffffff;
+    color: #000000;
+}
