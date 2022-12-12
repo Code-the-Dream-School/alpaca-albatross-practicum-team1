@@ -8,7 +8,8 @@ export const Postings = () => {
 
     useEffect(() => {
         axios
-            .get('http://localhost:3001/post/getPosts')
+            // eslint-disable-next-line no-undef
+            .get(`${process.env.REACT_APP_SERVICE_ENDPOINT}/post/getPosts`)
             .then((res) => {
                 setPosts(res.data.posts)
             })

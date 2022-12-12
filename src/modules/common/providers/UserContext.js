@@ -24,8 +24,8 @@ export const UserProvider = ({ children }) => {
                 try {
                     const token = localStorage.getItem('userToken')
                     const response = await axios.get(
-                        'http://localhost:3001/auth/validateToken',
-
+                        // eslint-disable-next-line no-undef
+                        `${process.env.REACT_APP_SERVICE_ENDPOINT}/auth/validateToken`,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
