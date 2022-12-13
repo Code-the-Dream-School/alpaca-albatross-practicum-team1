@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { UserContext } from '../../common/providers/UserContext'
 import { Post } from './Post'
+import styles from '../styles/MyPosts.module.css'
 
 export const MyPosts = () => {
     const [posts, setPosts] = useState([])
@@ -32,7 +33,7 @@ export const MyPosts = () => {
 
     return (
         <>
-            <h1>My Posts</h1>
+            <h1 className={styles.header}>My Posts</h1>
             {posts.map((post, index) => {
                 return (
                     <Post

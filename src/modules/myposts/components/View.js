@@ -2,9 +2,7 @@ import React from 'react'
 import styles from '../styles/View.module.css'
 import PropTypes from 'prop-types'
 
-export const View = ({ title, description, handleClick}) => {
-   
-
+export const View = ({ title, description, handleClick }) => {
     return (
         <div className={styles.postContainer}>
             <div className={styles.post}>
