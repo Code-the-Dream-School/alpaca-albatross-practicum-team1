@@ -9,6 +9,7 @@ export const Post = ({ id, title, message }) => {
     const [isInEditMode, setInEditMode] = useState(false)
     const [post, setPost] = useState({ title, message })
     const { user } = useContext(UserContext)
+
     const toggleEditMode = () => {
         setInEditMode(true)
     }
@@ -22,7 +23,6 @@ export const Post = ({ id, title, message }) => {
             ...data,
             username: user.username,
             id
-            // TODO and username once react useContext implemented
         }
         try {
             const response = await axios.post(
@@ -41,7 +41,6 @@ export const Post = ({ id, title, message }) => {
                 title: response.data.post.title,
                 message: response.data.post.message
             })
-            console.log(response)
         } catch (error) {
             console.log(error)
         }
@@ -66,6 +65,7 @@ export const Post = ({ id, title, message }) => {
         )
     }
 }
+
 Post.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string.isRequired,

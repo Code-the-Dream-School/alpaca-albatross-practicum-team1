@@ -23,7 +23,6 @@ export const MyPosts = () => {
                     }
                 )
                 setPosts(res.data.post)
-                console.log('log resp', res)
             } catch (error) {
                 console.log('error', error)
             }

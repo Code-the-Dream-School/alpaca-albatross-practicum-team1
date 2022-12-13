@@ -22,7 +22,8 @@ export const Registration = () => {
         setIsLoading(true)
         try {
             const response = await axios.post(
-                'http://localhost:3001/auth/register',
+                // eslint-disable-next-line no-undef
+                `${process.env.REACT_APP_SERVICE_ENDPOINT}/auth/register`,
                 {
                     ...data
                 },

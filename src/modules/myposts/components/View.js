@@ -13,6 +13,7 @@ export const View = ({ title, description, handleClick }) => {
         </div>
     )
 }
+
 View.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,

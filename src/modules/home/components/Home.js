@@ -5,15 +5,18 @@ import { LoginButton } from './LoginButton'
 import { RegisterButton } from './RegisterButton'
 import styles from '../styles/Home.module.css'
 import { UserContext } from '../../common/providers/UserContext'
+import rotatingEarth from '../../../assets/rotatingEarth.mp4'
+import { Footer } from './Footer'
 
 export const Home = () => {
     const { user } = useContext(UserContext)
 
     return (
-        <div>
+        <div className={styles.homeContainer}>
+            <video src={rotatingEarth} loop muted autoPlay />
+
             <div className={styles.homeHeader}>
-                <p>Logo Placeholder</p>
-                <h1>Volunteer</h1>
+                <h1 className={styles.header}>Volunteer</h1>
                 <div className={styles.homeButtons}>
                     {user.token ? (
                         <LogoutButton />
@@ -25,6 +28,7 @@ export const Home = () => {
                 </div>
             </div>
             <Postings />
+            <Footer />
         </div>
     )
 }

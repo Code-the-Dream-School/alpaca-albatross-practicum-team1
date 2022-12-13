@@ -25,6 +25,7 @@ export const Edit = ({ title, description, handleSubmit }) => {
         </div>
     )
 }
+
 Edit.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
