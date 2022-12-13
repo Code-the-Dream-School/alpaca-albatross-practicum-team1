@@ -1,5 +1,5 @@
 import React from 'react'
-import { MyPosts } from '../components/MyPosts'
+import { MyPosts } from '../components/Myposts'
 
 export const myPostsPath = '/myposts'
 
