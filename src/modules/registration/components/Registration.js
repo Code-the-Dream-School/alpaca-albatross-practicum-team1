@@ -3,8 +3,8 @@ import styles from '../styles/Registration.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 import { Link, useNavigate } from 'react-router-dom'
-import { homePath } from '../../home/routes/HomeRoute'
 import { UserContext } from '../../common/providers/UserContext'
+import { homePath } from '../../home/routes/HomeRoute'
 
 export const Registration = () => {
     const navigate = useNavigate()

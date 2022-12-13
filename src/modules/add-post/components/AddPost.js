@@ -22,9 +22,6 @@ export const AddPost = () => {
             .post(`${process.env.REACT_APP_SERVICE_ENDPOINT}/post/createPost`, {
                 ...requestData
             })
-            .then(() => {
-                // TODO: Add Success Message!
-            })
             .catch((err) => console.log(err))
     }
 
