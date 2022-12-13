@@ -26,7 +26,8 @@ export const Post = ({ id, title, message }) => {
         }
         try {
             const response = await axios.post(
-                'http://localhost:3001/post/updatePost',
+                // eslint-disable-next-line no-undef
+                `${process.env.REACT_APP_SERVICE_ENDPOINT}/post/updatePost`,
                 {
                     ...requestData
                 },
