@@ -1,6 +1,13 @@
 .posting {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1200px;
+}
+@media only screen and (max-width: 900px) {
+    .posting {
+        display: flex;
+        flex-flow: column;
+        width: fit-content;
+    }
 }

@@ -11,7 +11,7 @@ export const VolunteerButton = ({ id }) => {
     return (
         <div>
             <button className={styles.button} onClick={onClick}>
-                Apply to Volunteer
+                Apply
             </button>
         </div>
     )

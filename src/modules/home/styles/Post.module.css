@@ -1,11 +1,30 @@
-.postContainer {
-    padding: 0.5em;
-}
-
 .post {
-    background-color: #fffb00;
+    display: flex;
+    flex-flow: column;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 20px;
     border-radius: 0.8em;
-    padding: 1em;
-    margin: 0.5em;
-    max-width: 11em;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+.post:hover {
+    transform: rotate(3deg);
+}
+.post h3 {
+    color: #555;
+    margin-bottom: 6px;
+}
+.post p {
+    color: rgb(19, 18, 18);
+    font-size: 0.9em;
+}
+.post div {
+    color: #555;
+    font-size: 0.9em;
+    margin: 20px 0;
+    line-height: 1.5em;
 }

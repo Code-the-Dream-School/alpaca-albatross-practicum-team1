@@ -3,6 +3,7 @@ import { UserContext } from '../../common/providers/UserContext'
 import styles from '../styles/HomeNavigationLinks.module.css'
 import { registrationPath } from '../../registration/routes/RegistrationRoute'
 import { loginPath } from '../../login/routes/LoginRoute'
+import { homePath } from '../routes/HomeRoute'
 import { addPostPath } from '../../add-post/routes/AddPostRoute'
 import { Link } from 'react-router-dom'
 import { LogoutButton } from './LogoutButton'
@@ -17,10 +18,8 @@ export const NavigationLinks = () => {
             </div>
             <div>
                 <nav>
-                    <Link to="/">Home</Link>
-                    <Link to="/profile">Profile</Link>
-                    {/* TODO: Need to add link to My Post*/}
-                    <Link to="#">My Post</Link>
+                    <Link to={homePath}>Home</Link>
+                    {/* <Link to={postPath}>My Post</Link> */}
                     <Link to={addPostPath}>Add Post</Link>
                     {!user?.token ? (
                         <>
