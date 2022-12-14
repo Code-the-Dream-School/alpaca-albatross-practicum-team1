@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../styles/Edit.module.css'
 import PropTypes from 'prop-types'
 
-export const Edit = ({ title, description, handleSubmit }) => {
+export const Edit = ({ title, description, handleSubmit, handleClose }) => {
     return (
         <div className={styles.postContainer}>
             <div className={styles.post}>
@@ -20,6 +20,7 @@ export const Edit = ({ title, description, handleSubmit }) => {
                         placeholder={description}
                     ></textarea>
                     <button type="submit">Submit</button>
+                    <button onClick={handleClose}>Cancel</button>
                 </form>
             </div>
         </div>
@@ -29,5 +30,6 @@ export const Edit = ({ title, description, handleSubmit }) => {
 Edit.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    handleSubmit: PropTypes.func.isRequired
+    handleSubmit: PropTypes.func.isRequired,
+    handleClose: PropTypes.func.isRequired
 }
