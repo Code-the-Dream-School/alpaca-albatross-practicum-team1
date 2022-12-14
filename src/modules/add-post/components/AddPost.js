@@ -18,11 +18,9 @@ export const AddPost = () => {
         }
 
         axios
-            .post('http://localhost:3001/post/createPost', {
+            // eslint-disable-next-line no-undef
+            .post(`${process.env.REACT_APP_SERVICE_ENDPOINT}/post/createPost`, {
                 ...requestData
-            })
-            .then(() => {
-                // TODO: Add Success Message!
             })
             .catch((err) => console.log(err))
     }

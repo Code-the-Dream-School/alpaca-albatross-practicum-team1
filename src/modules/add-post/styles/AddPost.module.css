@@ -25,6 +25,7 @@
     box-sizing: border-box;
     border-radius: 3.125em;
     display: block;
+    background-color: #edf5fa;
 }
 
 .container button {

@@ -23,7 +23,8 @@ export const Login = () => {
         try {
             const response = await axios.post(
                 //TODO: update url once backend is finished
-                'http://localhost:3001/auth/login',
+                // eslint-disable-next-line no-undef
+                `${process.env.REACT_APP_SERVICE_ENDPOINT}/auth/login`,
                 { email, password }
             )
 

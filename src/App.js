@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Home } from './modules/home/components/Home'
 import { AddPost } from './modules/add-post/components/AddPost'
 import { Login } from './modules/login/components/Login'
+import { MyPosts } from './modules/myposts/components/MyPosts'
 import { Registration } from './modules/registration/components/Registration'
 import { NavigationLinks } from './modules/home/components/NavigationLinks'
 
@@ -16,8 +17,7 @@ function App() {
                 <Route path="/add-post" element={<AddPost />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registration" element={<Registration />} />
-                {/* <Route path="/profile" element={<Profile />} />  */}
-                <Route path="/my-post" element={<myPost />} />
+                <Route path="/myposts" element={<MyPosts />} />
             </Routes>
         </>
     )

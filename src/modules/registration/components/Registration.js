@@ -3,8 +3,8 @@ import styles from '../styles/Registration.module.css'
 import axios from 'axios'
 import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 import { Link, useNavigate } from 'react-router-dom'
-import { homePath } from '../../home/routes/HomeRoute'
 import { UserContext } from '../../common/providers/UserContext'
+import { homePath } from '../../home/routes/HomeRoute'
 
 export const Registration = () => {
     const navigate = useNavigate()
@@ -22,7 +22,8 @@ export const Registration = () => {
         setIsLoading(true)
         try {
             const response = await axios.post(
-                'http://localhost:3001/auth/register',
+                // eslint-disable-next-line no-undef
+                `${process.env.REACT_APP_SERVICE_ENDPOINT}/auth/register`,
                 {
                     ...data
                 },

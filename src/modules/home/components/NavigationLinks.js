@@ -5,6 +5,7 @@ import { registrationPath } from '../../registration/routes/RegistrationRoute'
 import { loginPath } from '../../login/routes/LoginRoute'
 import { homePath } from '../routes/HomeRoute'
 import { addPostPath } from '../../add-post/routes/AddPostRoute'
+import { myPostsPath } from '../../myposts/routes/MyPostsRoute'
 import { Link } from 'react-router-dom'
 import { LogoutButton } from './LogoutButton'
 import { useContext } from 'react'
@@ -19,7 +20,7 @@ export const NavigationLinks = () => {
             <div>
                 <nav>
                     <Link to={homePath}>Home</Link>
-                    {/* <Link to={postPath}>My Post</Link> */}
+                    <Link to={myPostsPath}>My Post</Link>
                     <Link to={addPostPath}>Add Post</Link>
                     {!user?.token ? (
                         <>
