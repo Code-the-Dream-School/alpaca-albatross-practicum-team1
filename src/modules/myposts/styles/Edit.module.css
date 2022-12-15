@@ -1,15 +1,30 @@
 .postContainer {
-  padding: 0.5em;
+    padding: 0.5em;
 }
 
 .post {
-  background-color: #00aaff;
-  border-radius: 0.8em;
-  padding: 1em;
-  margin: 0.5em;
-  max-width: 11em;
+    background-color: #58249c;
+    border-radius: 0.8em;
+    padding: 1em;
+    margin: 0.5em;
+    max-width: 12em;
 }
 
 .editText {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+button {
+    border-radius: 0.5em;
+    margin-top: 0.3em;
+}
+
+.textArea {
+    resize: none;
+}
+
+.submit {
+    background: rgb(66, 64, 66);
+    /* border-radius: 0.5em; */
+    color: rgb(255, 255, 255);
 }

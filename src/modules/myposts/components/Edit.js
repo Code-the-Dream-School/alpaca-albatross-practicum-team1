@@ -14,13 +14,19 @@ export const Edit = ({ title, description, handleSubmit, handleClose }) => {
                         placeholder={title}
                     />
                     <textarea
+                        className={styles.textArea}
                         type="text"
+                        rows="6"
                         required
                         name="message"
                         placeholder={description}
                     ></textarea>
-                    <button type="submit">Submit</button>
-                    <button onClick={handleClose}>Cancel</button>
+                    <button className={styles.submit} type="submit">
+                        Submit
+                    </button>
+                    <button className={styles.cancel} onClick={handleClose}>
+                        Cancel
+                    </button>
                 </form>
             </div>
         </div>

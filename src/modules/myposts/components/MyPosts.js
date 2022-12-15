@@ -32,7 +32,7 @@ export const MyPosts = () => {
     }, [user.token])
 
     return (
-        <>
+        <div className={styles.background}>
             <h1 className={styles.header}>My Posts</h1>
             {posts.map((post, index) => {
                 return (
@@ -44,6 +44,6 @@ export const MyPosts = () => {
                     />
                 )
             })}
-        </>
+        </div>
     )
 }
