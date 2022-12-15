@@ -15,13 +15,13 @@ export const AddPost = () => {
             ...data,
             username: user.username
         }
-        
 
         axios
-            // eslint-disable-next-line no-undef
-            .post(`${process.env.REACT_APP_SERVICE_ENDPOINT}/post/createPost`,
+            .post(
+                // eslint-disable-next-line no-undef
+                `${process.env.REACT_APP_SERVICE_ENDPOINT}/post/createPost`,
                 {
-                ...requestData
+                    ...requestData
                 },
                 {
                     headers: {
@@ -29,7 +29,7 @@ export const AddPost = () => {
                         'Content-Type': 'application/json'
                     }
                 }
-                )
+            )
             .catch((err) => console.log(err))
     }
 
