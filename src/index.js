@@ -10,6 +10,7 @@ import { myPostsRoute } from './modules/myposts/routes/MyPostsRoute'
 import { addPostRoute } from './modules/add-post/routes/AddPostRoute'
 import { UserProvider } from './modules/common/providers/UserContext'
 import { applyRoute } from './modules/apply-to-volunteer/routes/ApplyRoute'
+import { aboutRoute } from './modules/footer/Routes/AboutRoute'
 
 const router = createBrowserRouter([
     homeRoute,
@@ -17,7 +18,8 @@ const router = createBrowserRouter([
     registrationRoute,
     myPostsRoute,
     addPostRoute,
-    applyRoute
+    applyRoute,
+    aboutRoute
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

@@ -43,6 +43,9 @@ video {
         right: 0;
         width: 100vw;
     }
+    .homeHeader h1 {
+        margin-top: 0;
+    }
     .homeButtons {
         display: grid;
         grid-template-rows: 1fr 1fr;
