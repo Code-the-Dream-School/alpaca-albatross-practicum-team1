@@ -13,15 +13,23 @@ export const AddPost = () => {
         const data = Object.fromEntries(formData)
         const requestData = {
             ...data,
-            // TODO and username once react useContext implemented
             username: user.username
         }
+        
 
         axios
             // eslint-disable-next-line no-undef
-            .post(`${process.env.REACT_APP_SERVICE_ENDPOINT}/post/createPost`, {
+            .post(`${process.env.REACT_APP_SERVICE_ENDPOINT}/post/createPost`,
+                {
                 ...requestData
-            })
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${user.token}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+                )
             .catch((err) => console.log(err))
     }
 
