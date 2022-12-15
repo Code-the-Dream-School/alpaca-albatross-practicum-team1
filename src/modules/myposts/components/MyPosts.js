@@ -32,7 +32,7 @@ export const MyPosts = () => {
     }, [user.token])
 
     return (
-        <div className={styles.background}>
+        <div>
             <h1 className={styles.header}>My Posts</h1>
             {posts.map((post, index) => {
                 return (
