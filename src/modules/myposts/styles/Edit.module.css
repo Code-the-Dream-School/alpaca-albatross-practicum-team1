@@ -1,5 +1,6 @@
 .postContainer {
     padding: 0.5em;
+    padding: 0.5em;
 }
 
 .post {
@@ -11,6 +12,7 @@
 }
 
 .editText {
+    text-decoration: underline;
     text-decoration: underline;
 }
 

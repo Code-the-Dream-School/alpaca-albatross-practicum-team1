@@ -1,7 +1,15 @@
 .container {
-    margin: 0 3em;
+    max-width: 35em;
+    margin: 5em auto;
     display: flex;
     flex-direction: column;
+    text-align: center;
+}
+
+.container input {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
 }
 
 .input {
