@@ -34,16 +34,18 @@ export const MyPosts = () => {
     return (
         <div>
             <h1 className={styles.header}>My Posts</h1>
-            {posts.map((post, index) => {
-                return (
-                    <Post
-                        id={post._id}
-                        key={index}
-                        title={post.title}
-                        message={post.message}
-                    />
-                )
-            })}
+            <div className={styles.postWrap}>
+                {posts.map((post, index) => {
+                    return (
+                        <Post
+                            id={post._id}
+                            key={index}
+                            title={post.title}
+                            message={post.message}
+                        />
+                    )
+                })}
+            </div>
         </div>
     )
 }
