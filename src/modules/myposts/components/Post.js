@@ -4,7 +4,6 @@ import { View } from './View'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import { UserContext } from '../../common/providers/UserContext'
-import styles from '../styles/MyPosts.module.css'
 
 export const Post = ({ id, title, message }) => {
     const [isInEditMode, setInEditMode] = useState(false)
@@ -64,7 +63,6 @@ export const Post = ({ id, title, message }) => {
                 title={post.title}
                 description={post.message}
                 handleClick={() => toggleEditMode(true)}
-                className={styles.postWrap}
             />
         )
     }
