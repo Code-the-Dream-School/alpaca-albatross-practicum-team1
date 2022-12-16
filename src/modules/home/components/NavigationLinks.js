@@ -7,7 +7,6 @@ import { homePath } from '../routes/HomeRoute'
 import { addPostPath } from '../../add-post/routes/AddPostRoute'
 import { myPostsPath } from '../../myposts/routes/MyPostsRoute'
 import { Link } from 'react-router-dom'
-import { LogoutButton } from './LogoutButton'
 import { useContext } from 'react'
 
 export const NavigationLinks = () => {
@@ -28,7 +27,7 @@ export const NavigationLinks = () => {
                             <Link to={registrationPath}>Register</Link>{' '}
                         </>
                     ) : (
-                        <LogoutButton />
+                        <Link to={homePath}>Log out</Link>
                     )}
                 </nav>
             </div>
