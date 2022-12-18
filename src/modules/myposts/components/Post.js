@@ -10,8 +10,8 @@ export const Post = ({ id, title, message }) => {
     const [post, setPost] = useState({ title, message })
     const { user } = useContext(UserContext)
 
-    const toggleEditMode = () => {
-        setInEditMode(true)
+    const toggleEditMode = (isToggled) => {
+        setInEditMode(isToggled)
     }
 
     const handleSubmit = async (event) => {
@@ -54,6 +54,7 @@ export const Post = ({ id, title, message }) => {
                 title={post.title}
                 description={post.message}
                 handleSubmit={handleSubmit}
+                handleClose={() => toggleEditMode(false)}
             />
         )
     } else {
@@ -61,7 +62,7 @@ export const Post = ({ id, title, message }) => {
             <View
                 title={post.title}
                 description={post.message}
-                handleClick={toggleEditMode}
+                handleClick={() => toggleEditMode(true)}
             />
         )
     }
