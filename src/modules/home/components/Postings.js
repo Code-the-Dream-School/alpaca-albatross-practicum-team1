@@ -18,7 +18,9 @@ export const Postings = () => {
 
     if (!posts || !posts.length) {
         return (
-            <div className={styles.posting}>No posts yet, check back later</div>
+            <h2 className={styles.postingMessage}>
+                No posts yet, check back later
+            </h2>
         )
     }
 

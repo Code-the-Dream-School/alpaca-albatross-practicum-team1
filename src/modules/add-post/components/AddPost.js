@@ -27,12 +27,19 @@ export const AddPost = () => {
 
     return (
         <div className={styles.container}>
-            <h2>Add a New Post</h2>
             <form onSubmit={handleSubmit}>
-                <label>Post Title:</label>
-                <input type="text" required name="title" />
-                <label>Post Message:</label>
-                <textarea type="text" required name="message" />
+                <input
+                    type="text"
+                    required
+                    name="title"
+                    placeholder="Post Title"
+                />
+                <textarea
+                    type="text"
+                    required
+                    name="message"
+                    placeholder="Post Message"
+                />
                 <button>ADD POST</button>
             </form>
         </div>

@@ -24,7 +24,7 @@ export const NavigationLinks = () => {
                     {!user?.token ? (
                         <>
                             <Link to={loginPath}>Login</Link>
-                            <Link to={registrationPath}>Register</Link>{' '}
+                            <Link to={registrationPath}>Register</Link>
                         </>
                     ) : (
                         <Link to={homePath}>Log out</Link>

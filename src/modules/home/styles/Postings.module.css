@@ -1,13 +1,44 @@
 .posting {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    text-align: center;
+    display: flex;
+    grid-gap: 50px;
     max-width: 1200px;
+    flex-wrap: wrap;
 }
-@media only screen and (max-width: 900px) {
+
+.postingMessage {
+    text-align: center;
+    margin-top: -3em;
+    color: #58249c;
+}
+@media only screen and (max-width: 425px) {
     .posting {
-        display: flex;
-        flex-flow: column;
-        width: fit-content;
+        display: block;
+    }
+    .posting div {
+        margin-top: 1.5em;
+    }
+    .postingMessage {
+        margin-top: 1em;
+    }
+}
+
+@media (min-width: 768px) {
+    .posting {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+        max-width: 1200px;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .posting {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 50px;
+        max-width: 1200px;
+        flex-wrap: wrap;
     }
 }

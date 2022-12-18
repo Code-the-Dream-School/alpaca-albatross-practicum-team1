@@ -1,3 +1,10 @@
 .header {
+    margin-top: 3em;
     text-align: center;
+}
+
+@media only screen and (max-width: 425px) {
+    .header {
+        margin-top: 5em;
+    }
 }
