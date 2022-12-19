@@ -2,9 +2,12 @@ import React, { useContext } from 'react'
 import axios from 'axios'
 import styles from '../styles/AddPost.module.css'
 import { UserContext } from '../../common/providers/UserContext'
+import { useNavigate } from 'react-router-dom'
+import { myPostsPath } from '../../myposts/routes/MyPostsRoute'
 
 export const AddPost = () => {
     const { user } = useContext(UserContext)
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -16,8 +19,8 @@ export const AddPost = () => {
             username: user.username
         }
 
-        axios
-            .post(
+        try {
+            const response = await axios.post(
                 // eslint-disable-next-line no-undef
                 `${process.env.REACT_APP_SERVICE_ENDPOINT}/post/createPost`,
                 {
@@ -30,7 +33,13 @@ export const AddPost = () => {
                     }
                 }
             )
-            .catch((err) => console.log(err))
+
+            if (response) {
+                navigate(myPostsPath)
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
