@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 
 export const NavigationLinks = () => {
-    const { user } = useContext(UserContext)
+    const { user, logout } = useContext(UserContext)
     return (
         <div className={styles.container}>
             <div>
@@ -27,7 +27,9 @@ export const NavigationLinks = () => {
                             <Link to={registrationPath}>Register</Link>
                         </>
                     ) : (
-                        <Link to={homePath}>Log out</Link>
+                        <Link to={homePath} onClick={logout}>
+                            Log out
+                        </Link>
                     )}
                 </nav>
             </div>
