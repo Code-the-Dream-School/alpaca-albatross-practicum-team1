@@ -8,7 +8,9 @@ export const Home = () => {
     return (
         <div className={styles.homeContainer}>
             <video src={rotatingEarth} loop muted autoPlay />
-            <Postings />
+            <div className={styles.post}>
+                <Postings />
+            </div>
             <Footer />
         </div>
     )

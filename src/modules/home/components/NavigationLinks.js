@@ -7,11 +7,10 @@ import { homePath } from '../routes/HomeRoute'
 import { addPostPath } from '../../add-post/routes/AddPostRoute'
 import { myPostsPath } from '../../myposts/routes/MyPostsRoute'
 import { Link } from 'react-router-dom'
-import { LogoutButton } from './LogoutButton'
 import { useContext } from 'react'
 
 export const NavigationLinks = () => {
-    const { user } = useContext(UserContext)
+    const { user, logout } = useContext(UserContext)
     return (
         <div className={styles.container}>
             <div>
@@ -25,10 +24,12 @@ export const NavigationLinks = () => {
                     {!user?.token ? (
                         <>
                             <Link to={loginPath}>Login</Link>
-                            <Link to={registrationPath}>Register</Link>{' '}
+                            <Link to={registrationPath}>Register</Link>
                         </>
                     ) : (
-                        <LogoutButton />
+                        <Link to={homePath} onClick={logout}>
+                            Log out
+                        </Link>
                     )}
                 </nav>
             </div>

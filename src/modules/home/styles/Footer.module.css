@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     gap: 1em;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 3.6em;
     left: 0;

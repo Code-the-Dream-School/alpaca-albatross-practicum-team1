@@ -13,9 +13,9 @@ export const MyPosts = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await axios
+                const res = await axios.get(
                     // eslint-disable-next-line no-undef
-                    .get(`${process.env.REACT_APP_SERVICE_ENDPOINT}/post/getPost`,
+                    `${process.env.REACT_APP_SERVICE_ENDPOINT}/post/getPost`,
                     {
                         headers: {
                             Authorization: `Bearer ${user.token}`,
