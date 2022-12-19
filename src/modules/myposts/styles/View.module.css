@@ -3,7 +3,7 @@
 }
 
 .post {
-    background-color: #00aaff;
+    background-color: rgb(255, 255, 255);
     border-radius: 0.8em;
     padding: 1em;
     margin: 0.5em;
@@ -12,4 +12,14 @@
 
 .editText {
     text-decoration: underline;
+}
+
+.buttonStyling {
+    background: rgb(66, 64, 66);
+    color: rgb(255, 255, 255);
+    padding: 0.25em 1.75em;
+    border-radius: 0.5em;
+    margin-right: 1em;
+    cursor: pointer;
+    font-size: 1em;
 }

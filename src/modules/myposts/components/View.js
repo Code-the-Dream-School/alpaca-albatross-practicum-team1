@@ -8,7 +8,9 @@ export const View = ({ title, description, handleClick }) => {
             <div className={styles.post}>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <button onClick={handleClick}>Edit</button>
+                <button className={styles.buttonStyling} onClick={handleClick}>
+                    Edit
+                </button>
             </div>
         </div>
     )

@@ -3,8 +3,14 @@
     text-align: center;
 }
 
-@media only screen and (max-width: 425px) {
-    .header {
-        margin-top: 5em;
-    }
+body {
+    background-color: rgb(188, 185, 185);
+}
+
+.postWrap {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
