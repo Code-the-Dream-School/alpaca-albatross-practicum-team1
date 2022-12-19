@@ -1,5 +1,4 @@
 .container {
-    margin: 0 3em;
     display: flex;
     flex-direction: column;
 }
@@ -7,6 +6,7 @@
 .form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .input {
@@ -39,4 +39,15 @@
     text-align: center;
     color: red;
     font-size: large;
+}
+
+@media only screen and (max-width: 425px) {
+    .container {
+        margin: 10em 2em;
+    }
+}
+@media only screen and (min-width: 426px) {
+    .container {
+        margin: 10em;
+    }
 }
