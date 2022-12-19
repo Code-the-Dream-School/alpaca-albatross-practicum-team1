@@ -12,15 +12,14 @@ export const Postings = () => {
         const getPosts = async () => {
             setIsLoading(true)
             try {
-                await axios
-                    .get(
-                        // eslint-disable-next-line no-undef
-                        `${process.env.REACT_APP_SERVICE_ENDPOINT}/post/getPosts`
-                    )
-                    .then((res) => {
-                        setPosts(res.data.posts)
-                        setIsLoading(false)
-                    })
+                const response = await axios.get(
+                    // eslint-disable-next-line no-undef
+                    `${process.env.REACT_APP_SERVICE_ENDPOINT}/post/getPosts`
+                )
+                if (response.data.posts) {
+                    setPosts(response.data.posts)
+                    setIsLoading(false)
+                }
             } catch (error) {
                 console.log(error)
             }
