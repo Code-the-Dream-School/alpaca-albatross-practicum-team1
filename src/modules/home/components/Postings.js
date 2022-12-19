@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Post } from './Post'
 import axios from 'axios'
 import styles from '../styles/Postings.module.css'
+import { LoadingSpinner } from '../../common/components/LoadingSpinner'
 
 export const Postings = () => {
     const [posts, setPosts] = useState([])
@@ -18,7 +19,11 @@ export const Postings = () => {
 
     if (!posts || !posts.length) {
         return (
-            <div className={styles.posting}>No posts yet, check back later</div>
+            <div className={styles.spinnerContainer}>
+                <div className={styles.spinner}>
+                    <LoadingSpinner /> <h3>Posts are loading...</h3>
+                </div>
+            </div>
         )
     }
 
