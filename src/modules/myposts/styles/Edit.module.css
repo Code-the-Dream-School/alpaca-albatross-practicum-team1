@@ -3,13 +3,23 @@
 }
 
 .post {
-    background-color: #00aaff;
+    background-color: rgb(255, 255, 255);
     border-radius: 0.8em;
     padding: 1em;
     margin: 0.5em;
-    max-width: 11em;
+    max-width: 12em;
 }
 
-.editText {
-    text-decoration: underline;
+button {
+    border-radius: 0.5em;
+    margin-top: 0.3em;
+}
+
+.textArea {
+    resize: none;
+}
+
+.submit {
+    background: rgb(88, 36, 156);
+    color: rgb(255, 255, 255);
 }
