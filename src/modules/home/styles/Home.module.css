@@ -1,8 +1,10 @@
-.post {
-    justify-content: center;
-    text-align: center;
-    padding: 8em;
+.container {
     display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 2em;
+    padding-top: 5em;
+    padding-bottom: 5em;
 }
 
 video {
@@ -13,14 +15,9 @@ video {
     z-index: -1;
     filter: opacity(60%);
 }
-@media only screen and (max-width: 320px) {
-}
 
-@media only screen and (max-width: 768px) {
-}
-
-@media only screen and (max-width: 1024px) {
-    .homeHeader {
-        padding: 0 30px;
+@media (max-width: 768px) {
+    .container {
+        padding-top: 9em;
     }
 }

@@ -6,11 +6,9 @@ import { Footer } from './Footer'
 
 export const Home = () => {
     return (
-        <div className={styles.homeContainer}>
+        <div className={styles.container}>
             <video src={rotatingEarth} loop muted autoPlay />
-            <div className={styles.post}>
-                <Postings />
-            </div>
+            <Postings />
             <Footer />
         </div>
     )

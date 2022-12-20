@@ -1,5 +1,4 @@
 import React from 'react'
-import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { Home } from './modules/home/components/Home'
 import { AddPost } from './modules/add-post/components/AddPost'

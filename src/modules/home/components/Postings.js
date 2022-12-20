@@ -29,17 +29,19 @@ export const Postings = () => {
 
     return (
         <>
-            <div className={styles.posting}>
-                {posts.map((data, index) => {
-                    return (
-                        <Post
-                            key={index}
-                            title={data.title}
-                            description={data.message}
-                            id={data._id}
-                        />
-                    )
-                })}
+            <div className={styles.container}>
+                <div className={styles.posting}>
+                    {posts.map((data, index) => {
+                        return (
+                            <Post
+                                key={index}
+                                title={data.title}
+                                description={data.message}
+                                id={data._id}
+                            />
+                        )
+                    })}
+                </div>
             </div>
 
             {isLoading && (
