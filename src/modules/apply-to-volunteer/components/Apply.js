@@ -52,14 +52,6 @@ export const Apply = () => {
     return (
         <div className={styles.container}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <input
-                    name="username"
-                    className={styles.input}
-                    type="text"
-                    placeholder="Username"
-                    required
-                />
-
                 <textarea
                     name="message"
                     className={styles.input}
